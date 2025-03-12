@@ -4,46 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorian Kavadlo - Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Dorian Kavadlo</h1>
+        <div class="hero">
+            <h1>Dorian Kavadlo</h1>
+            <p>Software Developer | Game Designer | Composer</p>
+        </div>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#bio">Bio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Software Developer & QA Engineer with a background in game development, software testing, and backend development.</p>
-    </section>
+    <main>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="grid" id="projects-container">
+                <!-- Projects will be loaded here -->
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid" id="project-container">
-            <!-- Projects will be populated here dynamically -->
-        </div>
-    </section>
+        <section id="music" class="section">
+            <h2>Music</h2>
+            <div class="music-container">
+                <p>Listen to my latest compositions.</p>
+                <!-- Embed audio players or links -->
+            </div>
+        </section>
 
-    <section id="experience">
-        <h2>Work Experience</h2>
-        <div id="experience-container">
-            <!-- Experience will be populated dynamically -->
-        </div>
-    </section>
+        <section id="blog" class="section">
+            <h2>Blog</h2>
+            <div id="blog-posts">
+                <!-- Blog posts will be dynamically loaded -->
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: your-email@example.com</p>
-        <p><a href="https://github.com/KavadloD">GitHub</a> | <a href="https://linkedin.com/in/dorian-kavadlo">LinkedIn</a></p>
-    </section>
+        <section id="bio" class="section">
+            <h2>About Me</h2>
+            <p>I'm a software developer, game designer, and composer passionate about creating immersive experiences.</p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: your-email@example.com</p>
+            <p><a href="https://github.com/KavadloD">GitHub</a> | <a href="https://linkedin.com/in/dorian-kavadlo">LinkedIn</a></p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Dorian Kavadlo</p>
