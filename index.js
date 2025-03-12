@@ -118,3 +118,4 @@ fetchReposFromGit(gitRepo);
 populateExp_Edu(experience, "experience");
 populateExp_Edu(education, "education");
 populateLinks(footer, "footer");
+console.log("Experience Data:", experience);
