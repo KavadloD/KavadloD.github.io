@@ -1,169 +1,93 @@
 export const bio = [
-  "Hello, I'm Vinay Somawat!",
-  "<strong>Frontend Software Engineer</strong> with 4+ years of experience building scalable, user-focused web applications.",
-  "Skilled in Angular, TypeScript, and performance optimization, I aim to leverage my expertise in delivering innovative solutions that drive measurable business outcomes.",
-  "Passionate about mentoring, teamwork, and continuous improvement in engineering processes.",
+  "Hello, I'm Dorian Kavadlo!",
+  "<strong>Software Developer & QA Engineer</strong> with a background in game development, software testing, and backend development.",
+  "Proficient in <strong>C# (Unity), Python, SQL, and test automation</strong>, I aim to bridge the gap between development and quality assurance.",
+  "Passionate about game design, debugging, and writing efficient, maintainable code.",
 ];
 
 export const skills = [
-  "JavaScript, TypeScript, Angular, AngularJS, React, HTML5, CSS, Bootstrap, Tailwind CSS",
-  "RxJS, NGXS, NGRX, WebSockets, Stencil, Storybook, Module Federation, Webpack",
-  "Jenkins, JIRA, Git",
-  "Performance Optimization, Responsive Design, Cross-Browser Compatibility",
+  "Programming: C# (Unity), Python, SQL",
+  "Game Development: Unity, Unreal Engine, Game Design Patterns",
+  "Software Testing: ISTQB, Selenium, Test Automation",
+  "Database Management: SQL Server, PostgreSQL, MySQL",
+  "Tools: Git, GitHub, Jira, Postman, Visual Studio, VS Code",
 ];
 
 export const experience = [
   {
-    title: "Shiprocket Private Limited",
-    duration: "September 2023 - Present",
-    subtitle: "Software Engineer",
+    title: "Systems Administrator",
+    duration: "September 2024 - Present",
+    subtitle: "Karpel Solutions, St. Louis, MO",
     details: [
-      "Developed a design system using Stencil and Storybook that provides consistent UI components across platforms, ensuring a cohesive design.",
-      "Developed a dynamic support ticket panel that renders subcategories based on component IDs, handling up to 100 AWBs simultaneously.",
-      "Migrated 30+ modules from AngularJS to Angular 15 using Generative AI tools, reporting directly to the VP of Engineering.",
-      "Designed and implemented advanced features such as keyboard shortcuts, improving operational efficiency by 15 percent.",
-      "Took ownership of OKRs, collaborated with the product team, and mentored two junior developers, cutting their code review iterations and ensuring on-time feature delivery.",
+      "Provide technical support for Karpel’s criminal case management software, assisting attorneys and legal professionals.",
+      "Diagnose and document system bugs, ensuring efficient resolution by developers.",
+      "Manage SQL databases, writing queries to troubleshoot data inconsistencies.",
+      "Collaborate with developers to enhance system stability and security.",
     ],
-    tags: ["JavaScript", "Angular", "Bootstrap", "AngularJs"],
-    icon: "truck ",
+    tags: ["SQL", "Technical Support", "Bug Reporting", "Software Troubleshooting"],
+    icon: "cogs",
   },
   {
-    title: "Biofourmis India Private Limited",
-    duration: "April 2022 - Jul 2023",
-    subtitle: "Software Engineer",
+    title: "IT Analyst Intern",
+    duration: "June 2023 - January 2024",
+    subtitle: "FeatherShark, St. Louis, MO",
     details: [
-      "Spearheaded the implementation of micro-frontends using Module Federation, enabling modular and scalable architecture.",
-      "Earned the Biofourmis Bravo Award for upgrading the application to support flexible operations across multiple geographies.",
-      "Enhanced performance and user experience by integrating Twilio-Video, Countly, and NGXS WebSocket for real-time data management.",
+      "Managed user accounts through Microsoft 365 Admin Center & Google Workspace.",
+      "Imaged and configured laptops, ensuring smooth deployments for employees.",
+      "Resolved IT support tickets, troubleshooting hardware and software issues.",
     ],
-    tags: [
-      "JavaScript",
-      "Angular",
-      "RxJS",
-      "NGXS",
-      "TypeScript",
-      "RxState",
-      "Webpack",
-      "Optimization",
-    ],
-    icon: "heartbeat",
+    tags: ["Technical Support", "Microsoft 365", "Active Directory", "Device Management"],
+    icon: "desktop",
   },
   {
-    title: "Novopay Solutions Private Limited",
-    duration: "June 2020 - April 2022",
-    subtitle: "Software Engineer",
+    title: "Video Game Music Composer",
+    duration: "January 2024 - August 2024",
+    subtitle: "Graphite Lab, St. Louis, MO",
     details: [
-      "Built critical banking features including AePS services (eKYC, cash withdrawal, balance inquiry) used by over 1,00,000 retailers.",
-      "Developed QR code integration for wallet money loading, streamlining retailer workflows and reducing errors by 25 percent.",
-      "Integrated Clevertap analytics, Freshdesk ticketing, and chatbot services, enhancing user support and engagement.",
+      "Composed original soundtracks for game levels, enhancing player immersion.",
+      "Worked with game designers to ensure seamless audio integration.",
+      "Implemented music into Unity using FMOD and C# scripting.",
     ],
-    tags: ["JavaScript", "Angular", "Bootstrap", "Nodejs", "Jenkins"],
-    icon: "qrcode",
+    tags: ["Game Audio", "Unity", "FMOD", "Music Composition"],
+    icon: "music",
   },
-  {
-    title: "ThinkPedia LLP",
-    duration: "May 2019 - June 2019",
-    subtitle: "SDE Intern",
-    details: [
-      `Designed and developed a social media post management panel, improving collaboration efficiency by 50 percent.`,
-    ],
-    tags: ["JavaScript", "Angular", "Bootstrap", "Java", "Spring Boot"],
-    icon: "group",
-  },
-];
-
-export const trekking = [
-  "<strong>Kheerganga Trek</strong>, Himachal Pradesh (9,711 feet)",
-  "<strong>Triund Trek</strong>, Himachal Pradesh (9,350 feet)",
-  "<strong>Kedarkantha Trek</strong>, Uttarakhand (12,500 feet)",
-  "<strong>Jalori Pass Trek</strong>, Himachal Pradesh (10,800 feet)",
-  "<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir (5,200 feet)",
 ];
 
 export const education = [
   {
-    title: "B.Tech. in Computer Science and Engineering",
-    duration: "2016 - 2020",
-    subtitle: "National Institute of Technology, Warangal",
-    details: [],
-    tags: [
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Database Management System",
-      "Computer Networks",
-      "Compiler Designing",
-      "Cloud Computing",
-    ],
+    title: "Master of Science in Software Development",
+    duration: "2024 - 2025",
+    subtitle: "Maryville University of Saint Louis",
+    details: ["Focus on software engineering, databases, and QA methodologies."],
+    tags: ["Python", "SQL", "Software Testing", "Web Development"],
     icon: "graduation-cap",
   },
   {
-    title: "Class 12th in Science and Mathematics",
-    duration: "",
-    subtitle: "Board of Secondary Education, Rajasthan",
-    details: [],
-    tags: ["Physics", "Chemistry", "Mathematics"],
-    icon: "book",
+    title: "Bachelor of Fine Arts in Game Design",
+    duration: "2020 - 2024",
+    subtitle: "Maryville University of Saint Louis",
+    details: ["Summa Cum Laude | President of Maryville Game Developer's Club"],
+    tags: ["Game Development", "C#", "Unity", "Design Principles"],
+    icon: "gamepad",
   },
 ];
 
 export const footer = [
-  //   {
-  //     label: "Dev Profiles",
-  //     data: [
-  //       {
-  //         text: "Stackoverflow",
-  //         link: "https://stackoverflow.com/users/8461233/vinay-somawat",
-  //       },
-  //       {
-  //         text: "GitHub",
-  //         link: "https://github.com/vinaysomawat",
-  //       },
-  //       {
-  //         text: "LeetCode",
-  //         link: "https://leetcode.com/somawatvinay/",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     label: "Resources",
-  //     data: [
-  //       {
-  //         text: "Enable Dark/Light Mode",
-  //         func: "enableDarkMode()",
-  //       },
-  //       {
-  //         text: "Print this page",
-  //         func: "window.print()",
-  //       },
-  //       {
-  //         text: "Clone this page",
-  //         link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
-  //       },
-  //     ],
-  //   },
   {
     label: "Links",
     data: [
-      //   {
-      //     text: "Linkedin",
-      //     link: "https://www.linkedin.com/in/vinaysomawat/",
-      //   },
-      //   {
-      //     text: "Twitter",
-      //     link: "https://twitter.com/thesigmakid",
-      //   },
       {
-        text: "Buy me a coffee",
-        link: "https://www.buymeacoffee.com/r194dME8y",
+        text: "LinkedIn",
+        link: "https://www.linkedin.com/in/dorian-kavadlo/",
       },
       {
-        text: "Github",
-        link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+        text: "GitHub",
+        link: "https://github.com/KavadloD",
       },
     ],
   },
   {
     label: "copyright-text",
-    data: ["Made with &hearts; by Vinay Somawat"],
+    data: ["Made with &hearts; by Dorian Kavadlo"],
   },
 ];
