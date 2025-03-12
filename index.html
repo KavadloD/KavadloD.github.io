@@ -1,156 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorian Kavadlo - Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio webpage of Dorian Kavadlo" />
-    <meta
-      name="keywords"
-      content="portfolio,website,personal website,github,projects,software development,game development,QA,Python,C#"
-    />
-    <meta name="author" content="Dorian Kavadlo" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dorian Kavadlo</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script type="module" src="index.js"></script>
-    <script src="js/profile-card.js"></script>
-  </head>
-  <body>
-    <div id="colorlib-page">
-      <div class="container-wrap">
-        <a
-          href="#"
-          class="js-colorlib-nav-toggle colorlib-nav-toggle"
-          data-toggle="collapse"
-          data-target="#navbar"
-          aria-expanded="false"
-          aria-controls="navbar"
-          ><i></i
-        ></a>
-        <aside
-          id="colorlib-aside"
-          role="complementary"
-          class="border js-fullheight no-print"
-        >
-          <div class="text-center">
-            <div class="author-img">
-            </div>
-            <h1><a href="./index.html">Dorian Kavadlo</a></h1>
-          </div>
-          <nav
-            id="colorlib-main-menu"
-            role="navigation"
-            class="navbar"
-            style="padding-top: 2em"
-          >
-            <div id="navbar" class="collapse">
-              <ul>
-                <li><a href="#" data-nav-section="about">About</a></li>
-                <li><a href="#" data-nav-section="skills">Skills</a></li>
-                <li>
-                  <a href="#" data-nav-section="repos">Top Repositories</a>
-                </li>
-                <li><a href="#" data-nav-section="experience">Work Experience</a></li>
-                <li><a href="#" data-nav-section="education">Education</a></li>
-                <li><a href="#" data-nav-section="contact">Contact</a></li>
-              </ul>
-            </div>
-          </nav>
-        </aside>
-        <div id="colorlib-main">
-          <section class="colorlib-about" data-section="about">
-            <div class="colorlib-narrow-content">
-              <div class="row animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>About Me</h1>
-                  <p>
-                    I'm Dorian Kavadlo, a software developer with a background in 
-                    game development, software testing, and backend development.
-                    My expertise includes C# (Unity), Python, SQL, and QA automation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="colorlib-skills" data-section="skills">
-            <div class="colorlib-narrow-content">
-              <h1>Skills</h1>
-              <ul>
-                <li>Software Development (C#, Python, SQL)</li>
-                <li>Game Development (Unity, Unreal)</li>
-                <li>QA & Test Automation (Selenium, ISTQB)</li>
-                <li>Database Management (SQL Server, PostgreSQL)</li>
-              </ul>
-            </div>
-          </section>
-          <section class="colorlib-profile" data-section="profile-card">
-            <div class="colorlib-narrow-content">
-              <div class="profile-cards">
-                <div class="col">
-                  <div class="github-card" username="KavadloD"></div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="colorlib-experience" data-section="repos">
-            <div class="colorlib-narrow-content">
-              <h1>Top <span style="color: #f9bf3f">Repositories</span></h1>
-              <ul id="repos"></ul>
-            </div>
-          </section>
-          <section class="colorlib-experience" data-section="experience">
-            <div class="colorlib-narrow-content">
-              <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
-              <div class="timeline-centered" id="experience"></div>
-            </div>
-          </section>
-          <section class="colorlib-education" data-section="education">
-            <div class="colorlib-narrow-content">
-              <h1>Education</h1>
-              <p>Master’s in Software Development, Maryville University (2024-2025)</p>
-              <p>BFA in Game Design, Maryville University (2020-2024)</p>
-            </div>
-          </section>
-          <section class="colorlib-contact" data-section="contact">
-            <div class="colorlib-narrow-content">
-              <h1>Contact</h1>
-              <p>
-                Feel free to email me at <strong>your-email@example.com</strong> 
-                for collaboration, tech discussions, or career opportunities!
-              </p>
-            </div>
-          </section>
-          <section class="colorlib-footer no-print">
-            <div class="colorlib-narrow-content">
-              <footer class="footer">
-                <p>
-                  © 2025 Dorian Kavadlo |
-                  <a href="https://linkedin.com/in/dorian-kavadlo" target="_blank">LinkedIn</a> |
-                  <a href="https://github.com/KavadloD" target="_blank">GitHub</a>
-                </p>
-              </footer>
-            </div>
-          </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Software Developer & QA Engineer with a background in game development, software testing, and backend development.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid" id="project-container">
+            <!-- Projects will be populated here dynamically -->
         </div>
-      </div>
-    </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    </section>
+
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <div id="experience-container">
+            <!-- Experience will be populated dynamically -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: your-email@example.com</p>
+        <p><a href="https://github.com/KavadloD">GitHub</a> | <a href="https://linkedin.com/in/dorian-kavadlo">LinkedIn</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dorian Kavadlo</p>
+    </footer>
+</body>
 </html>
