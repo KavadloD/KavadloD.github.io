@@ -1,35 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-  loadProjects();
-  loadBlogPosts();
-});
-
-function loadProjects() {
+document.addEventListener("DOMContentLoaded", function () {
   const projects = [
-      { title: "Game Project", description: "An indie game I developed.", link: "#" },
-      { title: "Portfolio Site", description: "This portfolio site.", link: "#" },
-      { title: "Music Player", description: "A music player web app.", link: "#" }
+      { title: "Game Project 1", image: "images/game1.jpg", link: "project1.html" },
+      { title: "Game Project 2", image: "images/game2.jpg", link: "project2.html" },
+      { title: "Game Project 3", image: "images/game3.jpg", link: "project3.html" },
+      { title: "Software Tool", image: "images/tool.jpg", link: "project4.html" },
+      { title: "QA Automation", image: "images/qa.jpg", link: "project5.html" },
+      { title: "AI Experiment", image: "images/ai.jpg", link: "project6.html" }
   ];
-  
-  const container = document.getElementById("projects-container");
-  projects.forEach(proj => {
-      const div = document.createElement("div");
-      div.className = "project";
-      div.innerHTML = `<h3>${proj.title}</h3><p>${proj.description}</p><a href="${proj.link}" target="_blank">View</a>`;
-      container.appendChild(div);
-  });
-}
 
-function loadBlogPosts() {
-  const blogPosts = [
-      { title: "My Journey in Game Dev", content: "Sharing my experiences...", link: "#" },
-      { title: "Why QA Matters", content: "A deep dive into software testing...", link: "#" }
-  ];
-  
-  const container = document.getElementById("blog-posts");
-  blogPosts.forEach(post => {
-      const div = document.createElement("div");
-      div.className = "project";
-      div.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p><a href="${post.link}" target="_blank">Read More</a>`;
-      container.appendChild(div);
+  const projectContainer = document.getElementById("projects-container");
+
+  projects.forEach((project) => {
+      const projectCard = document.createElement("div");
+      projectCard.classList.add("project-card");
+
+      projectCard.innerHTML = `
+          <a href="${project.link}">
+              <img src="${project.image}" alt="${project.title}">
+              <div class="project-title">${project.title}</div>
+          </a>
+      `;
+
+      projectContainer.appendChild(projectCard);
   });
-}
+});
