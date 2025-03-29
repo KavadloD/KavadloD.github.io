@@ -1,65 +1,118 @@
-body {
-    font-family: Arial, sans-serif;
-    color: #24282d;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  header {
-    padding: 2em 0;
-  }
-  
-  .tagline {
-    font-style: italic;
-    color: #777;
-    margin-bottom: 1em;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2em;
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #24282d;
-    font-weight: bold;
-  }
-  
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
-    padding: 2em;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .project-card {
-    text-decoration: none;
-    color: #24282d;
-  }
-  
-  .project-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 6px;
-    transition: transform 0.3s ease;
-  }
-  
-  .project-card img:hover {
-    transform: scale(1.03);
-  }
-  
-  .project-card h3 {
-    margin-top: 0.5em;
-    font-weight: bold;
-  }
-  
+/* General Reset & Base Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #24282d;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Page Layout Wrapper */
+.page-wrapper {
+  min-height: calc(100vh - 60px); /* Leave space for footer */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+header {
+  padding: 3em 0;
+}
+
+header h1 {
+  font-family: "Figtree", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Tagline */
+.tagline {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 1.5em;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+nav ul li a {
+  text-transform: uppercase;
+  font-family: "Figtree", sans-serif;
+  text-decoration: none;
+  color: #24282d;
+  font-weight: 800;
+  transition: color 0.1s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #007BFF;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Project Cards */
+.project-card {
+  text-decoration: none;
+  color: #24282d;
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.project-card img:hover {
+  transform: scale(1.03);
+}
+
+.project-card h3 {
+  font-family: "Figtree", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.5em;
+  transition: color 0.1s ease-in-out;
+}
+
+.project-card:hover h3 {
+  color: #007BFF;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #f2f3f5;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.9rem;
+  color: #24282d;
+  border-top: 1px solid #ccc;
+  height: 60px;
+}
