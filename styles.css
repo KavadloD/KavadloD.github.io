@@ -1,4 +1,4 @@
-/* General Reset & Base Styles */
+/* Base Reset & General Styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -9,16 +9,16 @@ html, body {
   text-align: center;
 }
 
-/* Page Layout Wrapper */
+/* Wrapper for layout below header and above footer */
 .page-wrapper {
-  min-height: calc(100vh - 60px); /* Leave space for footer */
+  min-height: calc(100vh - 60px); /* Leaves space for footer */
   display: flex;
   flex-direction: column;
 }
 
-/* Header Styles */
+/* Header */
 header {
-  padding: 3em 0;
+  padding: 3em 0 1em;
 }
 
 header h1 {
@@ -40,14 +40,14 @@ header h1 a {
 .tagline {
   font-style: italic;
   color: #777;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 /* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 2.5em;
+  margin-bottom: 3em;
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -76,7 +76,6 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-/* Project Cards */
 .project-card {
   text-decoration: none;
   color: #24282d;
@@ -104,6 +103,84 @@ nav ul li a:hover {
 
 .project-card:hover h3 {
   color: #007BFF;
+}
+
+/* Contact Page */
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
+.contact-section h2 {
+  font-family: "Figtree", sans-serif;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+/* Social Icons */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.contact-icons a {
+  text-decoration: none;
+  color: #24282d;
+  font-family: "Figtree", sans-serif;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contact-icons img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.5em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-icons a:hover img {
+  transform: scale(1.1);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Figtree", sans-serif;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 0.75em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
 }
 
 /* Footer */
