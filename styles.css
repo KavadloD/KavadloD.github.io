@@ -11,7 +11,14 @@ html, body {
 
 /* Wrapper for layout below header and above footer */
 .page-wrapper {
-  min-height: calc(100vh - 60px); /* Leaves space for footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main Content */
+main {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -47,7 +54,7 @@ header h1 a {
 nav ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -63,6 +70,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+  color: #007BFF;
+}
+
+nav ul li a.active {
   color: #007BFF;
 }
 
@@ -109,14 +120,14 @@ nav ul li a:hover {
 .contact-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2em 1em;
+  padding: 4em 1em 3em; /* Extra top and bottom padding for spacing */
 }
 
 .contact-section h2 {
   font-family: "Figtree", sans-serif;
   font-size: 2rem;
   margin-top: 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 /* Social Icons */
@@ -124,8 +135,8 @@ nav ul li a:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2em;
-  margin-bottom: 2em;
+  gap: 2.5em;
+  margin: 2.5em 0; /* Extra space above and below the icons */
 }
 
 .contact-icons a {
@@ -137,11 +148,11 @@ nav ul li a:hover {
 }
 
 .contact-icons img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 0.5em;
+  margin: 0 auto 0.75em; /* More space between icon and label */
   transition: transform 0.2s ease-in-out;
 }
 
@@ -150,6 +161,13 @@ nav ul li a:hover {
 }
 
 /* Contact Form */
+.contact-section h3 {
+  font-family: "Figtree", sans-serif;
+  font-size: 1.25rem;
+  margin: 3em 0 1em; /* Moves form title down */
+  font-weight: 700;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
