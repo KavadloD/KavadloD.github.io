@@ -7,6 +7,18 @@ html, body {
   color: #24282d;
   background-color: #ffffff;
   text-align: center;
+  border: 8px solid #1e1e1e;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevents horizontal scroll & border glitches */
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 /* Wrapper for layout below header and above footer */
@@ -120,7 +132,7 @@ nav ul li a.active {
 .contact-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 4em 1em 3em; /* Extra top and bottom padding for spacing */
+  padding: 1em 2em 2em; /* Reduced top padding further */
 }
 
 .contact-section h2 {
@@ -210,4 +222,58 @@ nav ul li a.active {
   color: #24282d;
   border-top: 1px solid #ccc;
   height: 60px;
+}
+
+/* Music Section */
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.music-card {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.music-card h3 {
+  font-family: "Figtree", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+
+.music-card p {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 1em;
+}
+
+/* Scoped music page link styles */
+.music-section a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.music-section a:hover {
+  text-decoration: underline;
+}
+
+.music-section a:visited {
+  color: #007BFF;
+}
+
+.bio-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3em 1em;
+  font-family: "Figtree", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
