@@ -1,279 +1,306 @@
-/* Base Reset & General Styles */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #24282d;
-  background-color: #ffffff;
-  text-align: center;
-  border: 8px solid #1e1e1e;
-  box-sizing: border-box;
-  overflow-x: hidden; /* prevents horizontal scroll & border glitches */
-}
+/* ========================
+   Base Reset & Global Styles
+   ======================== */
+   html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #24282d;
+    background-color: #ffffff;
+    text-align: center;
+    border: 6px solid #1e1e1e;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
 
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
+  html {
+    box-sizing: border-box;
+    height: 100%;
+  }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
 
-/* Wrapper for layout below header and above footer */
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+  /* ========================
+     Layout Structure
+     ======================== */
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-/* Main Content */
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 
-/* Header */
-header {
-  padding: 3em 0 1em;
-}
+  /* ========================
+     Header & Navigation
+     ======================== */
+  header {
+    padding: 3em 0 1em;
+  }
 
-header h1 {
-  font-family: "Figtree", sans-serif;
-  font-size: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 800;
-  margin-bottom: 0.5em;
-  display: inline-block;
-}
+  header h1 {
+    font-family: "Figtree", sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 0.5em;
+    display: inline-block;
+  }
 
-header h1 a {
-  text-decoration: none;
-  color: inherit;
-}
+  header h1 a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-/* Tagline */
-.tagline {
-  font-style: italic;
-  color: #777;
-  margin-bottom: 2em;
-}
+  .tagline {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 2em;
+  }
 
-/* Navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2em;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
 
-nav ul li a {
-  text-transform: uppercase;
-  font-family: "Figtree", sans-serif;
-  text-decoration: none;
-  color: #24282d;
-  font-weight: 800;
-  transition: color 0.1s ease-in-out;
-}
+  nav ul li a {
+    text-transform: uppercase;
+    font-family: "Figtree", sans-serif;
+    text-decoration: none;
+    color: #24282d;
+    font-weight: 800;
+    transition: color 0.1s ease-in-out;
+  }
 
-nav ul li a:hover {
-  color: #007BFF;
-}
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #1a68c7;
+  }
 
-nav ul li a.active {
-  color: #007BFF;
-}
+  /* ========================
+     Section Page Titles
+     ======================== */
+  main > h3 {
+    font-family: "Figtree", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 auto 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid #fe6601;
+    width: fit-content;
+  }
 
-/* Project Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  padding: 2em;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  /* ========================
+     Project Grid
+     ======================== */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.project-card {
-  text-decoration: none;
-  color: #24282d;
-}
+  .project-card {
+    text-decoration: none;
+    color: #24282d;
+  }
 
-.project-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
+  .project-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
 
-.project-card img:hover {
-  transform: scale(1.03);
-}
+  .project-card img:hover {
+    transform: scale(1.03);
+  }
 
-.project-card h3 {
-  font-family: "Figtree", sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-top: 0.5em;
-  transition: color 0.1s ease-in-out;
-}
+  .project-card h3 {
+    font-family: "Figtree", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 0.5em;
+    transition: color 0.1s ease-in-out;
+  }
 
-.project-card:hover h3 {
-  color: #007BFF;
-}
+  .project-card:hover h3 {
+    color: #1a68c7;
+  }
 
-/* Contact Page */
-.contact-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1em 2em 2em; /* Reduced top padding further */
-}
+  /* ========================
+     Contact Page
+     ======================== */
+  .contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em 2em 2em;
+  }
 
-.contact-section h2 {
-  font-family: "Figtree", sans-serif;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 2em;
-}
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    margin: 2.5em 0;
+  }
 
-/* Social Icons */
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5em;
-  margin: 2.5em 0; /* Extra space above and below the icons */
-}
+  .contact-icons a {
+    text-decoration: none;
+    color: #24282d;
+    font-family: "Figtree", sans-serif;
+    text-align: center;
+    font-weight: 600;
+  }
 
-.contact-icons a {
-  text-decoration: none;
-  color: #24282d;
-  font-family: "Figtree", sans-serif;
-  text-align: center;
-  font-weight: 600;
-}
+  .contact-icons img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 0.75em;
+    transition: transform 0.2s ease-in-out;
+  }
 
-.contact-icons img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 0.75em; /* More space between icon and label */
-  transition: transform 0.2s ease-in-out;
-}
+  .contact-icons a:hover img {
+    transform: scale(1.1);
+  }
 
-.contact-icons a:hover img {
-  transform: scale(1.1);
-}
+  .contact-section h3 {
+    font-family: "Figtree", sans-serif;
+    font-size: 1.25rem;
+    margin: 3em 0 1em;
+    font-weight: 700;
+  }
 
-/* Contact Form */
-.contact-section h3 {
-  font-family: "Figtree", sans-serif;
-  font-size: 1.25rem;
-  margin: 3em 0 1em; /* Moves form title down */
-  font-weight: 700;
-}
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  max-width: 500px;
-  margin: 0 auto;
-}
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Figtree", sans-serif;
+    font-size: 1rem;
+  }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: "Figtree", sans-serif;
-  font-size: 1rem;
-}
+  .contact-form button {
+    padding: 0.75em;
+    background-color: #1a68c7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
 
-.contact-form button {
-  padding: 0.75em;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
 
-.contact-form button:hover {
-  background-color: #0056b3;
-}
+  /* ========================
+     Music Page
+     ======================== */
+     .music-section {
+      padding: 2em;
+    }
 
-/* Footer */
-.site-footer {
-  background-color: #f2f3f5;
-  text-align: center;
-  padding: 1em 0;
-  font-size: 0.9rem;
-  color: #24282d;
-  border-top: 1px solid #ccc;
-  height: 60px;
-}
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-/* Music Section */
-.music-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2em;
-  padding: 2em;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .music-card {
+      text-align: left;
+      padding: 1em;
+    }
 
-.music-card {
-  background-color: #f9f9f9;
-  border-radius: 6px;
-  padding: 1em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
+    .music-card h3 {
+      font-family: "Figtree", sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 0.25em 0;
+    }
 
-.music-card h3 {
-  font-family: "Figtree", sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 0.3em;
-}
+    .music-card p {
+      margin: 0 0 0.5em 0;
+      font-size: 0.95rem;
+    }
 
-.music-card p {
-  font-style: italic;
-  font-size: 0.95rem;
-  margin-bottom: 1em;
-}
+    .music-thumbnail {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 6px;
+      margin: 1em 0;
+    }
 
-/* Scoped music page link styles */
-.music-section a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: 600;
-}
+    .music-card iframe {
+      width: 100%;
+      border-radius: 4px;
+      margin: 0.5em 0;
+    }
 
-.music-section a:hover {
-  text-decoration: underline;
-}
+    .music-card a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-.music-section a:visited {
-  color: #007BFF;
-}
+    .music-card a:hover {
+      text-decoration: underline;
+    }
 
-.bio-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3em 1em;
-  font-family: "Figtree", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
+
+  /* ========================
+     Bio Page
+     ======================== */
+  .bio-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3em 1em;
+    font-family: "Figtree", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  /* ========================
+     Footer
+     ======================== */
+  .site-footer {
+    background-color: #f2f3f5;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.9rem;
+    color: #24282d;
+    border-top: 1px solid #ccc;
+    height: 60px;
+  }
