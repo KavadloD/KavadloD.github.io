@@ -7,20 +7,12 @@
     padding: 0;
     font-family: Arial, sans-serif;
     color: #24282d;
-    background-color: #ffffff;
     text-align: center;
     border: 6px solid #1e1e1e;
     box-sizing: border-box;
     overflow-x: hidden;
-  }
-
-  html {
-    box-sizing: border-box;
-    height: 100%;
-  }
-
-  *, *::before, *::after {
-    box-sizing: inherit;
+    background-color: #ffffff;
+    position: relative;
   }
 
   /* ========================
@@ -30,6 +22,11 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+    background-repeat: repeat;
+    background-color: #ffffff;
+    z-index: 0;
+    background-blend-mode:lighten
   }
 
   main {
@@ -306,14 +303,75 @@
   /* ========================
      Bio Page
      ======================== */
-  .bio-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3em 1em;
-    font-family: "Figtree", sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
+     .bio-wrapper {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 2em 1em;
+      text-align: left;
+    }
+
+    .bio-entry {
+      background-color: #f9f9f9;
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 2em;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .bio-entry:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .bio-entry p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .bio-img {
+      border-radius: 6px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .profile-intro .bio-intro-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5em;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      flex-shrink: 0;
+    }
+
+    .centered-img {
+      display: block;
+      margin: 1.5em auto 0 auto;
+      max-width: 480px;
+      border-radius: 6px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .bio-mgdc-flex {
+      display: flex;
+      gap: 1em;
+      margin-bottom: 1em;
+    }
+
+    .bio-img-half {
+      width: 50%;
+      border-radius: 6px;
+      object-fit: cover;
+      height: auto;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    }
+
 
   /* ========================
      Footer
