@@ -5,7 +5,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Figtree", Arial, sans-serif;
     color: #24282d;
     text-align: center;
     border: 6px solid #1e1e1e;
@@ -13,8 +13,18 @@
     overflow-x: hidden;
     background-color: #ffffff;
     position: relative;
+    line-height: 1.6;
   }
-
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+  a:focus-visible {
+    outline: 2px dashed #4a90e2;
+    outline-offset: 2px;
+  }
+  
   /* ========================
      Layout Structure
      ======================== */
@@ -26,24 +36,25 @@
     background-repeat: repeat;
     background-color: #ffffff;
     z-index: 0;
-    background-blend-mode:lighten
+    background-blend-mode:soft-light;
   }
-
+  
   main {
     flex: 1;
     display: flex;
     flex-direction: column;
   }
-
+  
   /* ========================
      Header & Navigation
      ======================== */
   header {
     padding: 3em 0 1em;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-
+  
   header h1 {
-    font-family: "Figtree", sans-serif;
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -51,18 +62,18 @@
     margin-bottom: 0.5em;
     display: inline-block;
   }
-
+  
   header h1 a {
     text-decoration: none;
     color: inherit;
   }
-
+  
   .tagline {
     font-style: italic;
     color: #777;
     margin-bottom: 2em;
   }
-
+  
   nav ul {
     list-style: none;
     padding: 0;
@@ -71,52 +82,50 @@
     justify-content: center;
     gap: 1em;
   }
-
+  
   nav ul li a {
     text-transform: uppercase;
-    font-family: "Figtree", sans-serif;
     text-decoration: none;
     color: #24282d;
     font-weight: 800;
     transition: color 0.1s ease-in-out;
   }
-
+  
   nav ul li a:hover,
   nav ul li a.active {
-    color: #1a68c7;
+    color: #4a90e2;
   }
-
+  
   /* ========================
      Section Page Titles
      ======================== */
   main > h3 {
-    font-family: "Figtree", sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
     text-transform: uppercase;
-    margin: 0 auto 1.5em;
+    margin: 2em auto 1em auto;
     padding-bottom: 0.5em;
     border-bottom: 3px solid #fe6601;
     width: fit-content;
   }
-
+  
   /* ========================
      Project Grid
      ======================== */
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2em;
     padding: 2em;
     max-width: 1200px;
     margin: 0 auto;
   }
-
+  
   .project-card {
     text-decoration: none;
     color: #24282d;
   }
-
+  
   .project-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -124,23 +133,22 @@
     border-radius: 6px;
     transition: transform 0.3s ease;
   }
-
+  
   .project-card img:hover {
     transform: scale(1.03);
   }
-
+  
   .project-card h3 {
-    font-family: "Figtree", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     margin-top: 0.5em;
     transition: color 0.1s ease-in-out;
   }
-
+  
   .project-card:hover h3 {
-    color: #1a68c7;
+    color: #4a90e2;
   }
-
+  
   /* ========================
      Contact Page
      ======================== */
@@ -149,7 +157,7 @@
     margin: 0 auto;
     padding: 1em 2em 2em;
   }
-
+  
   .contact-icons {
     display: flex;
     justify-content: center;
@@ -157,15 +165,19 @@
     gap: 2.5em;
     margin: 2.5em 0;
   }
-
+  
   .contact-icons a {
     text-decoration: none;
     color: #24282d;
-    font-family: "Figtree", sans-serif;
     text-align: center;
     font-weight: 600;
+    transition: color 0.2s ease;
   }
-
+  
+  .contact-icons a:hover {
+    color: #4a90e2;
+  }
+  
   .contact-icons img {
     width: 90px;
     height: 90px;
@@ -174,18 +186,17 @@
     margin: 0 auto 0.75em;
     transition: transform 0.2s ease-in-out;
   }
-
+  
   .contact-icons a:hover img {
     transform: scale(1.1);
   }
-
+  
   .contact-section h3 {
-    font-family: "Figtree", sans-serif;
     font-size: 1.25rem;
     margin: 3em 0 1em;
     font-weight: 700;
   }
-
+  
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -193,19 +204,18 @@
     max-width: 500px;
     margin: 0 auto;
   }
-
+  
   .contact-form input,
   .contact-form textarea {
     padding: 0.75em;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: "Figtree", sans-serif;
     font-size: 1rem;
   }
-
+  
   .contact-form button {
     padding: 0.75em;
-    background-color: #1a68c7;
+    background-color: #4a90e2;
     color: white;
     border: none;
     border-radius: 4px;
@@ -214,165 +224,164 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
   }
-
+  
   .contact-form button:hover {
-    background-color: #0056b3;
+    background-color: #3b7bd9;
   }
-
+  
   /* ========================
      Music Page
      ======================== */
-     .music-section {
-      padding: 2em;
-    }
-
-    .music-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2em;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .music-card {
-      background-color: #f8f9fa;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1.5em;
-      transition: box-shadow 0.2s ease, background-color 0.2s ease;
-      text-align: left;
-    }
-
-    .music-card h3 {
-      font-family: "Figtree", sans-serif;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin: 0 0 0.25em 0;
-    }
-
-    .music-card p {
-      margin: 0 0 0.5em 0;
-      font-size: 0.95rem;
-      font-style: italic;
-    }
-
-    .music-thumbnail {
-      width: 100%;
-      max-width: 400px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 6px;
-      margin: 1em 0;
-    }
-
-    .music-card iframe {
-      width: 100%;
-      border-radius: 4px;
-      margin: 0.5em 0;
-    }
-
-    .music-card a {
-      color: #007BFF;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .music-card a:hover {
-      text-decoration: underline;
-    }
-
-    .music-card:hover {
-      background-color: #f0f4ff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .music-card p a {
-      font-size: 0.9rem;
-      color: #666666; /* Subtle gray */
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5em;
-      font-weight: 500;
-    }
-
-    .music-card p a:hover {
-      text-decoration: underline;
-      color: #444; /* Slightly darker on hover */
-    }
-
+  .music-section {
+    padding: 2em;
+  }
+  
+  .music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    row-gap: 3em;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .music-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+    text-align: left;
+  }
+  
+  .music-card h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 0.25em 0;
+  }
+  
+  .music-card p {
+    margin: 0 0 0.5em 0;
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+  
+  .music-thumbnail {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 1em 0;
+  }
+  
+  .music-card iframe {
+    width: 100%;
+    border-radius: 4px;
+    margin: 0.5em 0;
+  }
+  
+  .music-card a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .music-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .music-card:hover {
+    background-color: #f0f4ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .music-card p a {
+    font-size: 0.9rem;
+    color: #4a90e2;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5em;
+    font-weight: 500;
+  }
+  
+  .music-card p a:hover {
+    text-decoration: underline;
+    color: #3b7bd9;
+  }
+  
   /* ========================
      Bio Page
      ======================== */
-     .bio-wrapper {
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 2em 1em;
-      text-align: left;
-    }
-
-    .bio-entry {
-      background-color: #f9f9f9;
-      padding: 1.5em;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      margin-bottom: 2em;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .bio-entry:hover {
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .bio-entry p {
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    .bio-img {
-      border-radius: 6px;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .profile-intro .bio-intro-flex {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5em;
-    }
-
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 2px solid #ccc;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      flex-shrink: 0;
-    }
-
-    .centered-img {
-      display: block;
-      margin: 1.5em auto 0 auto;
-      max-width: 480px;
-      border-radius: 6px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    }
-
-    .bio-mgdc-flex {
-      display: flex;
-      gap: 1em;
-      margin-bottom: 1em;
-    }
-
-    .bio-img-half {
-      width: 50%;
-      border-radius: 6px;
-      object-fit: cover;
-      height: auto;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-    }
-
-
+  .bio-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2em 1em;
+    text-align: left;
+  }
+  
+  .bio-entry {
+    background-color: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2em;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .bio-entry:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+  
+  .bio-entry p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+  
+  .bio-img {
+    border-radius: 6px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .profile-intro .bio-intro-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+  }
+  
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+  }
+  
+  .centered-img {
+    display: block;
+    margin: 1.5em auto 0 auto;
+    max-width: 480px;
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  }
+  
+  .bio-mgdc-flex {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .bio-img-half {
+    width: 50%;
+    border-radius: 6px;
+    object-fit: cover;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  }
+  
   /* ========================
      Footer
      ======================== */
@@ -385,3 +394,4 @@
     border-top: 1px solid #ccc;
     height: 60px;
   }
+  
