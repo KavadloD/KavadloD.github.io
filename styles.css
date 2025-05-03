@@ -1,19 +1,33 @@
 /* ========================
-   Base Reset & Global Styles
+   Global Reset & Variables
    ======================== */
-   html, body {
+   :root {
+    --color-text: #24282d;
+    --color-muted: #777;
+    --color-accent: #fe6601;
+    --color-highlight: #4a90e2;
+    --color-link: #6c4caf;
+    --color-bg: #ffffff;
+    --color-panel: #f9f9f9;
+    --font-primary: 'Figtree', system-ui, sans-serif;
+    --font-secondary: 'Source Sans 3', sans-serif;
+  }
+  
+  html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Figtree", Arial, sans-serif;
-    color: #24282d;
+    font-family: var(--font-primary);
+    color: var(--color-text);
     text-align: center;
     border: 6px solid #1e1e1e;
     box-sizing: border-box;
     overflow-x: hidden;
-    background-color: #ffffff;
+    background-color: var(--color-bg);
     position: relative;
     line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
   
   *, *::before, *::after {
@@ -21,27 +35,24 @@
   }
   
   a:focus-visible {
-    outline: 2px dashed #4a90e2;
+    outline: 2px dashed var(--color-highlight);
     outline-offset: 2px;
   }
   
   /* ========================
-     Layout Structure
+     Layout
      ======================== */
-     .page-wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    
-      background-color: #ffffff;
-      background-image: url('../images/diamond-upholstery.png'); /* adjust path if needed */
-      background-repeat: repeat;
-      background-size: auto;
-    
-      background-blend-mode: multiply; /* or try overlay */
-      z-index: 0;
-    }
-    
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    background-image: url('../images/diamond-upholstery.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-blend-mode: multiply;
+    z-index: 0;
+  }
   
   main {
     flex: 1;
@@ -50,8 +61,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2em;
-    padding-top: 0;
-  }  
+  }
   
   /* ========================
      Header & Navigation
@@ -78,7 +88,7 @@
   
   .tagline {
     font-style: italic;
-    color: #777;
+    color: var(--color-muted);
     margin-bottom: 2em;
   }
   
@@ -94,18 +104,18 @@
   nav ul li a {
     text-transform: uppercase;
     text-decoration: none;
-    color: #24282d;
+    color: var(--color-text);
     font-weight: 800;
     transition: color 0.1s ease-in-out;
   }
   
   nav ul li a:hover,
   nav ul li a.active {
-    color: #4a90e2;
+    color: var(--color-highlight);
   }
   
   /* ========================
-     Section Page Titles
+     Section Headings
      ======================== */
   main > h3 {
     font-size: 1.75rem;
@@ -113,7 +123,7 @@
     text-transform: uppercase;
     margin: 1em auto 0.75em auto;
     padding-bottom: 0.5em;
-    border-bottom: 3px solid #fe6601;
+    border-bottom: 3px solid var(--color-accent);
     width: fit-content;
   }
   
@@ -131,7 +141,7 @@
   
   .project-card {
     text-decoration: none;
-    color: #24282d;
+    color: var(--color-text);
   }
   
   .project-card img {
@@ -154,14 +164,13 @@
   }
   
   .project-card:hover h3 {
-    color: #4a90e2;
+    color: var(--color-highlight);
   }
-
-/* ========================
-   Project Pages
-   ======================== */
-
-   .project-page {
+  
+  /* ========================
+     Project Pages
+     ======================== */
+  .project-page {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2em;
@@ -172,34 +181,111 @@
     margin-bottom: 2.5em;
   }
   
-  /* Headings inside project pages */
-  .project-page h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1em;
+  .project-section.back-link {
+    text-align: left;
+    margin-top: 1em;
+  }
+  
+  .project-section a {
+    font-family: var(--font-secondary);
+    font-size: 1.125rem;
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .project-section a:hover {
+    color: var(--color-highlight);
+    text-decoration: underline;
+  }
+  
+  .play-link:visited {
+    color: var(--color-link);
+  }
+  
+  .back-button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.4em 1em;
+    margin-top: 1.5em;
+    background-color: #fe6601;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #4a90e2;
+    transform: translateY(-1px);
   }
 
+.back-button {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.4em 1em;
+  margin-top: 1.5em;
+  background-color: var(--color-accent);
+  color: #fff !important;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.back-button:hover,
+.back-button:visited,
+.back-button:focus,
+.back-button:active {
+  background-color: var(--color-highlight);
+  color: #fff !important;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+  
+  .project-page h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1.5em 0 1em;
+    color: #1a1a1a;
+  }
+  
   .project-page p {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.25rem;
     line-height: 1.75;
     margin-bottom: 1.25em;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: var(--color-panel);
+    padding: 1em;
+    border-radius: 8px;
   }
   
-  /* Hero image styling */
+  .project-page ul {
+    font-family: var(--font-secondary);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    padding-left: 1.5em;
+    margin-bottom: 1.5em;
+    color: #333;
+  }
+  
+  .project-page ul li {
+    margin-bottom: 0.75em;
+    list-style-type: disc;
+  }
+  
   .centered-img {
     display: block;
     margin: 1.5em auto;
-    width: 100%;
-    max-width: 800px;
+    max-width: 100%;
+    width: 1000px;
     border-radius: 6px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
     object-fit: cover;
   }
   
-  /* Side-by-side screenshot row */
   .image-row {
     display: flex;
     justify-content: center;
@@ -215,14 +301,13 @@
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
   }
   
-  /* Responsive video embed */
   .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     max-width: 100%;
-    margin: 2em 0 1.5em; /* tighter bottom spacing */
+    margin: 2em 0 1.5em;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   }
@@ -234,250 +319,237 @@
     width: 100%;
     height: 100%;
     border: 0;
-  }  
-  
-  
-  /* ========================
-     Contact Page
-     ======================== */
-  .contact-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2em 2em;
-  }
-  
-  .contact-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2.5em;
-    margin: 2.5em 0;
-  }
-  
-  .contact-icons a {
-    text-decoration: none;
-    color: #24282d;
-    text-align: center;
-    font-weight: 600;
-    transition: color 0.2s ease;
-  }
-  
-  .contact-icons a:hover {
-    color: #4a90e2;
-  }
-  
-  .contact-icons img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 0.75em;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .contact-icons a:hover img {
-    transform: scale(1.1);
-  }
-  
-  .contact-section h3 {
-    font-size: 1.25rem;
-    margin: 3em 0 1em;
-    font-weight: 700;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .contact-form button {
-    padding: 0.75em;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .contact-form button:hover {
-    background-color: #3b7bd9;
   }
   
   /* ========================
-     Music Page
-     ======================== */
-  .music-section {
-    padding: 2em;
-  }
-  
-  .music-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-    row-gap: 3em;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .music-card {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5em;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease;
-    text-align: left;
-  }
-  
-  .music-card h3 {
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.25em 0;
-  }
-  
-  .music-card p {
-    margin: 0 0 0.5em 0;
-    font-size: 0.95rem;
-    font-style: italic;
-  }
-  
-  .music-thumbnail {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 6px;
-    margin: 1em 0;
-  }
-  
-  .music-card iframe {
-    width: 100%;
-    border-radius: 4px;
-    margin: 0.5em 0;
-  }
-  
-  .music-card a {
-    color: #c4d3e4;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .music-card a:hover {
-    text-decoration: underline;
-  }
-  
-  .music-card:hover {
-    background-color: #f0f4ff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  }
-  
-  .music-card p a {
-    font-size: 0.9rem;
-    color: #4a90e2;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 0.5em;
-    font-weight: 500;
-  }
-  
-  .music-card p a:hover {
-    text-decoration: underline;
-    color: #3b7bd9;
-  }
-  
-  /* ========================
-     Bio Page
-     ======================== */
-  .bio-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2em 2em;
-    text-align: left;
-  }
-  
-  .bio-entry {
-    background-color: #f9f9f9;
-    padding: 1.5em;
-    border-radius: 10px;
-    margin-bottom: 2em;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  
-  .bio-entry p {
-    line-height: 1.7;
-    font-size: 1.05rem;
-  }
-  
-  .bio-img {
-    border-radius: 6px;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .profile-intro .bio-intro-flex {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5em;
-  }
-  
-  .profile-pic {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid #ccc;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    flex-shrink: 0;
-  }
-  
-  .centered-img {
-    display: block;
-    margin: 1.5em auto;
-    max-width: 100%;
-    width: 1000px; /* or 1100px if you want edge-to-edge */
-    border-radius: 6px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-  }
-  
-  
-  .bio-mgdc-flex {
-    display: flex;
-    gap: 1em;
-    margin-bottom: 1em;
-  }
-  
-  .bio-img-half {
-    width: 50%;
-    border-radius: 6px;
-    object-fit: cover;
-    height: auto;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-  }
-  
-  /* ========================
-     Footer
-     ======================== */
-  .site-footer {
-    background-color: #f2f3f5;
-    text-align: center;
-    padding: 1em 0;
-    font-size: 0.9rem;
-    color: #24282d;
-    border-top: 1px solid #ccc;
-    height: 60px;
-  }
-  
+   Contact Page
+   ======================== */
+.contact-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2em 2em;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5em;
+  margin: 2.5em 0;
+}
+
+.contact-icons a {
+  text-decoration: none;
+  color: var(--color-text);
+  text-align: center;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.contact-icons a:hover {
+  color: var(--color-highlight);
+}
+
+.contact-icons img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.75em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-icons a:hover img {
+  transform: scale(1.1);
+}
+
+.contact-section h3 {
+  font-size: 1.25rem;
+  margin: 3em 0 1em;
+  font-weight: 700;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 0.75em;
+  background-color: var(--color-highlight);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #3b7bd9;
+}
+
+/* ========================
+   Music Page
+   ======================== */
+.music-section {
+  padding: 2em;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  row-gap: 3em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.music-card {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  text-align: left;
+}
+
+.music-card h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 0.25em 0;
+}
+
+.music-card p {
+  margin: 0 0 0.5em 0;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.music-thumbnail {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 1em 0;
+}
+
+.music-card iframe {
+  width: 100%;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+
+.music-card a {
+  color: #c4d3e4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.music-card a:hover {
+  text-decoration: underline;
+}
+
+.music-card:hover {
+  background-color: #f0f4ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.music-card p a {
+  font-size: 0.9rem;
+  color: var(--color-highlight);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5em;
+  font-weight: 500;
+}
+
+.music-card p a:hover {
+  text-decoration: underline;
+  color: #3b7bd9;
+}
+
+/* ========================
+   Bio Page
+   ======================== */
+.bio-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2em 2em;
+  text-align: left;
+}
+
+.bio-entry {
+  background-color: var(--color-panel);
+  padding: 1.5em;
+  border-radius: 10px;
+  margin-bottom: 2em;
+  transition: box-shadow 0.3s ease;
+}
+
+.bio-entry p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.bio-img {
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+}
+
+.profile-intro .bio-intro-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.bio-mgdc-flex {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.bio-img-half {
+  width: 50%;
+  border-radius: 6px;
+  object-fit: cover;
+  height: auto;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================
+   Footer
+   ======================== */
+.site-footer {
+  background-color: #f2f3f5;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  border-top: 1px solid #ccc;
+  height: 60px;
+}
