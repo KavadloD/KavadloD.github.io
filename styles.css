@@ -130,6 +130,8 @@
   /* ========================
      Project Grid
      ======================== */
+
+  
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -148,6 +150,9 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    background-color: #f0f0f0; /* fallback for light images like 'Squash' */
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
     transition: transform 0.3s ease;
   }
@@ -181,11 +186,13 @@
     margin-bottom: 2.5em;
   }
   
-  .project-section.back-link {
+  .back-button-wrapper {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 2em;
     text-align: left;
-    margin-top: 1em;
   }
-  
+
   .project-section a {
     font-family: var(--font-secondary);
     font-size: 1.125rem;
@@ -203,17 +210,18 @@
     color: var(--color-link);
   }
   
-  .back-button {
-    display: inline-block;
-    font-size: 1rem;
-    padding: 0.4em 1em;
-    margin-top: 1.5em;
-    background-color: #fe6601;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease, transform 0.1s ease;
-  }
+.back-button {
+  display: inline-block;
+  color: #fff !important;
+  background-color: var(--color-accent);
+  text-decoration: none;
+  padding: 0.4em 1em;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin: 0; /* override possible inherited margins */
+}
   
   .back-button:hover {
     background-color: #4a90e2;
@@ -410,7 +418,7 @@
 
 .music-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2em;
   row-gap: 3em;
   max-width: 1200px;
@@ -427,9 +435,9 @@
 }
 
 .music-card h3 {
-  text-transform: uppercase;
-  font-weight: 700;
-  margin: 0 0 0.25em 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.75em;
 }
 
 .music-card p {
@@ -464,8 +472,8 @@
 }
 
 .music-card:hover {
-  background-color: #f0f4ff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .music-card p a {
@@ -480,6 +488,20 @@
 .music-card p a:hover {
   text-decoration: underline;
   color: #3b7bd9;
+}
+
+.music-links {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+.music-links a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-highlight);
+}
+.music-links a:hover {
+  text-decoration: underline;
 }
 
 /* ========================
