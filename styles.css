@@ -159,6 +159,7 @@
   
   .project-card img:hover {
     transform: scale(1.03);
+    border: 2px solid #4a90e2;
   }
   
   .project-card h3 {
@@ -430,7 +431,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1.5em;
-  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
   text-align: left;
 }
 
@@ -473,7 +474,7 @@
 
 .music-card:hover {
   transform: translateY(-4px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid #fe6601;
 }
 
 .music-card p a {
@@ -502,6 +503,12 @@
 }
 .music-links a:hover {
   text-decoration: underline;
+}
+
+.music-card.playing {
+  border: 2px solid #fe6601;
+  box-shadow: 0 0 0 3px rgba(254, 102, 1, 0.25);
+  transform: translateY(-4px);
 }
 
 /* ========================
