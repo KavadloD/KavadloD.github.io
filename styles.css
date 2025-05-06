@@ -12,7 +12,7 @@
     --font-primary: 'Figtree', system-ui, sans-serif;
     --font-secondary: 'Source Sans 3', sans-serif;
   }
-  
+
   html, body {
     height: 100%;
     margin: 0;
@@ -29,16 +29,16 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
-  
+
   *, *::before, *::after {
     box-sizing: inherit;
   }
-  
+
   a:focus-visible {
     outline: 2px dashed var(--color-highlight);
     outline-offset: 2px;
   }
-  
+
   /* ========================
      Layout
      ======================== */
@@ -53,7 +53,7 @@
     background-blend-mode: multiply;
     z-index: 0;
   }
-  
+
   main {
     flex: 1;
     display: flex;
@@ -62,7 +62,7 @@
     margin: 0 auto;
     padding: 0 2em;
   }
-  
+
   /* ========================
      Header & Navigation
      ======================== */
@@ -71,27 +71,28 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+
   header h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 800;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     display: inline-block;
   }
-  
+
   header h1 a {
     text-decoration: none;
     color: inherit;
   }
-  
+
   .tagline {
     font-style: italic;
     color: var(--color-muted);
+    margin-top: 0;
     margin-bottom: 2em;
   }
-  
+
   nav ul {
     list-style: none;
     padding: 0;
@@ -100,7 +101,7 @@
     justify-content: center;
     gap: 1em;
   }
-  
+
   nav ul li a {
     text-transform: uppercase;
     text-decoration: none;
@@ -108,12 +109,12 @@
     font-weight: 800;
     transition: color 0.1s ease-in-out;
   }
-  
+
   nav ul li a:hover,
   nav ul li a.active {
     color: var(--color-highlight);
   }
-  
+
   /* ========================
      Section Headings
      ======================== */
@@ -126,12 +127,18 @@
     border-bottom: 3px solid var(--color-accent);
     width: fit-content;
   }
-  
+    .project-subheading {
+      font-size: 0.9em;
+      color: #777;
+      margin-top: -0.5em;
+      margin-bottom: 1.5em;
+    }
+
   /* ========================
      Project Grid
      ======================== */
 
-  
+
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -140,12 +147,12 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+
   .project-card {
     text-decoration: none;
     color: var(--color-text);
   }
-  
+
   .project-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -156,23 +163,23 @@
     border-radius: 6px;
     transition: transform 0.3s ease;
   }
-  
+
   .project-card img:hover {
     transform: scale(1.03);
     border: 2px solid #4a90e2;
   }
-  
+
   .project-card h3 {
     text-transform: uppercase;
     font-weight: 700;
     margin-top: 0.5em;
     transition: color 0.1s ease-in-out;
   }
-  
+
   .project-card:hover h3 {
     color: var(--color-highlight);
   }
-  
+
   /* ========================
      Project Pages
      ======================== */
@@ -182,11 +189,17 @@
     padding: 2em;
     text-align: left;
   }
-  
+
   .project-section {
     margin-bottom: 2.5em;
   }
-  
+
+    .project-section:first-of-type {
+      margin-top: 0;
+      margin-bottom: 1.5em;
+      /* or adjust to taste */
+    }
+
   .back-button-wrapper {
     max-width: 1200px;
     margin: 2em auto;
@@ -201,16 +214,16 @@
     text-decoration: none;
     transition: color 0.2s ease;
   }
-  
+
   .project-section a:hover {
     color: var(--color-highlight);
     text-decoration: underline;
   }
-  
+
   .play-link:visited {
     color: var(--color-link);
   }
-  
+
 .back-button {
   display: inline-block;
   color: #fff !important;
@@ -223,7 +236,7 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
   margin: 0; /* override possible inherited margins */
 }
-  
+
   .back-button:hover {
     background-color: #4a90e2;
     transform: translateY(-1px);
@@ -252,14 +265,14 @@
   text-decoration: none;
   transform: translateY(-1px);
 }
-  
+
   .project-page h3 {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 1.5em 0 1em;
     color: #1a1a1a;
   }
-  
+
   .project-page p {
     font-family: var(--font-secondary);
     font-size: 1.25rem;
@@ -270,7 +283,7 @@
     padding: 1em;
     border-radius: 8px;
   }
-  
+
   .project-page ul {
     font-family: var(--font-secondary);
     font-size: 1.125rem;
@@ -279,22 +292,21 @@
     margin-bottom: 1.5em;
     color: #333;
   }
-  
+
   .project-page ul li {
     margin-bottom: 0.75em;
     list-style-type: disc;
   }
-  
+
   .centered-img {
     display: block;
-    margin: 1.5em auto;
-    max-width: 100%;
+    margin: 0.75em auto 1.5em auto;    max-width: 100%;
     width: 1000px;
     border-radius: 6px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
     object-fit: cover;
   }
-  
+
   .image-row {
     display: flex;
     justify-content: center;
@@ -302,14 +314,14 @@
     gap: 2em;
     margin-top: 1em;
   }
-  
+
   .image-row img {
     width: 500px;
     max-width: 100%;
     border-radius: 6px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
   }
-  
+
   .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -320,7 +332,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   }
-  
+
   .video-wrapper iframe {
     position: absolute;
     top: 0;
@@ -329,7 +341,7 @@
     height: 100%;
     border: 0;
   }
-  
+
   /* ========================
    Contact Page
    ======================== */
