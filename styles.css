@@ -28,6 +28,7 @@
     line-height: 1.6;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
 
   *, *::before, *::after {
@@ -224,47 +225,29 @@
     color: var(--color-link);
   }
 
-.back-button {
-  display: inline-block;
-  color: #fff !important;
-  background-color: var(--color-accent);
-  text-decoration: none;
-  padding: 0.4em 1em;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s ease, transform 0.1s ease;
-  margin: 0; /* override possible inherited margins */
-}
-
-  .back-button:hover {
-    background-color: #4a90e2;
+  .back-button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.4em 1em;
+    margin-top: 1.5em;
+    background-color: var(--color-accent);
+    color: #fff !important;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .back-button:hover,
+  .back-button:visited,
+  .back-button:focus,
+  .back-button:active {
+    background-color: var(--color-highlight);
+    color: #fff !important;
+    text-decoration: none;
     transform: translateY(-1px);
   }
-
-.back-button {
-  display: inline-block;
-  font-size: 1rem;
-  padding: 0.4em 1em;
-  margin-top: 1.5em;
-  background-color: var(--color-accent);
-  color: #fff !important;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.back-button:hover,
-.back-button:visited,
-.back-button:focus,
-.back-button:active {
-  background-color: var(--color-highlight);
-  color: #fff !important;
-  text-decoration: none;
-  transform: translateY(-1px);
-}
 
   .project-page h3 {
     font-size: 1.5rem;
@@ -301,7 +284,8 @@
   .centered-img {
     display: block;
     margin: 0.75em auto 1.5em auto;    max-width: 100%;
-    width: 1000px;
+    max-width: 100%;
+    width: 100%;
     border-radius: 6px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
     object-fit: cover;
