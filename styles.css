@@ -68,7 +68,7 @@
      Header & Navigation
      ======================== */
   header {
-    padding: 2em 0 1em;
+    padding: 0.5em 0 1em;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -238,7 +238,7 @@
     text-decoration: none;
     transition: background-color 0.2s ease, transform 0.1s ease;
   }
-  
+
   .back-button:hover,
   .back-button:visited,
   .back-button:focus,
@@ -263,7 +263,7 @@
     margin-bottom: 1.25em;
     color: #333;
     background-color: var(--color-panel);
-    padding: 1em;
+    padding-bottom: 1em;
     border-radius: 8px;
   }
 
