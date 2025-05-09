@@ -20,7 +20,6 @@
     font-family: var(--font-primary);
     color: var(--color-text);
     text-align: center;
-    border: 6px solid #1e1e1e;
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: var(--color-bg);
@@ -29,6 +28,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   *, *::before, *::after {
@@ -173,7 +174,7 @@
   .project-card h3 {
     text-transform: uppercase;
     font-weight: 700;
-    margin-top: 0.5em;
+    margin-top: 0.75em;
     transition: color 0.1s ease-in-out;
   }
 
@@ -258,7 +259,7 @@
 
   .project-page p {
     font-family: var(--font-secondary);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.75;
     margin-bottom: 1.25em;
     color: #333;
@@ -369,7 +370,8 @@
 }
 
 .contact-section h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem
+;
   margin: 3em 0 1em;
   font-weight: 700;
 }
@@ -456,6 +458,8 @@
   width: 100%;
   border-radius: 4px;
   margin: 0.5em 0;
+  max-width: 100%;
+  height: auto;
 }
 
 .music-card a {
@@ -559,7 +563,9 @@
 }
 
 .bio-img-half {
-  width: 50%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;  
   border-radius: 6px;
   object-fit: cover;
   height: auto;
@@ -569,12 +575,123 @@
 /* ========================
    Footer
    ======================== */
-.site-footer {
-  background-color: #f2f3f5;
-  text-align: center;
-  padding: 1em 0;
-  font-size: 0.9rem;
-  color: var(--color-text);
-  border-top: 1px solid #ccc;
-  height: 60px;
-}
+   .site-footer {
+    background-color: #f2f3f5;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    border-top: 1px solid #ccc;
+    min-height: 60px;
+  }
+  
+
+/* ========================
+   Responsive Adjustments
+   ======================== */
+   @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--color-bg);
+      z-index: 10;
+      padding: 0.5em 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75em;
+      margin-bottom: 1.5em;
+    }
+  
+    main {
+      padding: 0 1em;
+    }
+  
+    .project-grid {
+      padding: 1em;
+      gap: 1.5em;
+    }
+  
+    .music-grid {
+      grid-template-columns: 1fr;
+      padding: 1em;
+    }
+  
+    .image-row {
+      flex-direction: column;
+      gap: 1em;
+    }
+  
+    .bio-mgdc-flex,
+    .profile-intro .bio-intro-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .bio-img-half {
+      width: 100%;
+    }
+  
+    .contact-form {
+      width: 100%;
+      padding: 0 1em;
+    }
+  
+    .contact-icons {
+      gap: 1.5em;
+    }
+
+      a,
+  button {
+    min-height: 44px;
+  }
+
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    .tagline {
+      font-size: 0.9rem;
+      margin-bottom: 1.5em;
+    }
+  
+    .project-page p,
+    .project-page ul {
+      font-size: 1rem;
+    }
+  
+    .project-page h3 {
+      font-size: 1.125rem
+;
+    }
+
+    .project-grid {
+      padding: 1em 0.5em;
+    }
+  
+    .music-card p {
+      font-size: 0.85rem;
+    }
+  
+    .site-footer {
+      font-size: 0.75rem;
+      padding: 0.75em 0;
+    }
+  }
+  
+  
