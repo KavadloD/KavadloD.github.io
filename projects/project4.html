@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
   <link rel="icon" href="../images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="page-wrapper">
     <header>
@@ -28,64 +30,124 @@
 
     <main>
       <h3 class="page-heading">Ha! Potato</h3>
-    
+      <p class="project-subheading"><em>Unity · C# · Music · Game Jam</em></p>
+
+
       <section class="project-page">
-        
+
         <!-- Main Screenshot -->
         <div class="project-section">
           <img src="../images/Project 4/hapotato_main.png" alt="Ha! Potato Main Screenshot" class="centered-img">
         </div>
-    
-        <!-- Game Description -->
-        <div class="project-section">
-          <p>
-            <strong>Ha! Potato</strong> is a chaotic, voice-controlled party game developed by the Maryville Game Developers Club for the 2024 Global Game Jam. As club president, I led the game’s design, ideation, and programming.
-          </p>
-          <p>
-            Created in response to the theme <em>“Make Me Laugh,”</em> the game features a series of fast-paced microgames inspired by the WarioWare formula. The twist? Every minigame is controlled using your voice through a microphone — shout, hum, or make noise to complete wacky challenges. After each game, players pass the mic to a friend, like a hot potato, adding a frantic and fun social element.
-          </p>
 
-          <h3>How to Play</h3>
+        <!-- Overview -->
+        <div class="project-section">
+          <h3>Overview</h3>
+          <p>
+            <strong>Ha! Potato</strong> is a chaotic, voice-controlled party game created for the 2024 Global Game Jam
+            by the
+            Maryville Game Developers Club. Inspired by the theme <em>“Make Me Laugh,”</em>&nbsp;the game pits players
+            against a
+            rapid-fire series of voice-based microgames where your only input is a microphone!
+          </p>
+          <p>
+            As club president, I led the game’s design, ideation, and programming. Built in just 3 days, the project
+            draws
+            from the fast-paced WarioWare formula, with a twist: every action must be performed using your voice.
+            Whether you have to get loud, stay quiet, or say the correct phrase,
+            each challenge is a race against the clock. After each round,
+            the mic is passed to the next player like a game of hot potato. You don't want the timer to end on your turn
+            — or you're out!
+          </p>
+        </div>
+
+        <!-- Gameplay -->
+        <div class="project-section">
+          <h3>Gameplay</h3>
           <ul>
-            <li>Plug in a microphone and get ready to use your voice as your only input.</li>
-            <li>Each player faces a random microgame with quirky voice-based challenges.</li>
-            <li>Pass the mic after your turn — don’t be the one holding the "potato" when time runs out!</li>
-            <li>Great for group play, party settings, or just laughing at yourself.</li>
+            <li>Plug in a microphone — your voice is the only controller.</li>
+            <li>Face randomized microgames that require sounds like shouting, blowing into the mic, or staying
+              completely silent.</li>
+            <li>Pass the mic after your turn — don’t be caught holding the "potato" when the timer runs out.</li>
+            <li>Designed for quick, energetic rounds and loud, chaotic group fun.</li>
+            <li>Perfect for party settings or couch co-op with friends.</li>
           </ul>
         </div>
-    
+
+        <!-- Design Highlights -->
+        <div class="project-section">
+          <h3>Design Highlights</h3>
+          <p>
+            <strong>Ha! Potato</strong> was designed around spontaneity, quick thinking, and laughter. The goal was to
+            create
+            something anyone could jump into and instantly understand when playing for the first time. I had a lot of
+            fun
+            composing short 5–10 second loops for each microgame.
+          </p>
+          <p>
+            With a team of about five artists and three
+            programmers, each artist took on one or two microgames to illustrate using just a few simple frames. This
+            approach
+            let us build a lot of unique minigames fairly quickly, then focus on wiring up the main mechanics. I
+            developed the
+            voice input
+            system to detect volume and pitch thresholds, mapping those to game-specific actions. Each microgame was
+            designed to
+            be
+            quick and intuitive, only requiring a single voice input — whether you're blowing into the mic to extinguish
+            a
+            birthday candle or shouting to
+            fire a laser as (royalty-free) Godzilla.
+          </p>
+          <p>
+            The game uses Unity’s built-in Windows Speech API via the <code>KeywordRecognizer</code> class, letting us
+            map voice
+            commands directly to actions without external libraries. This kept development lightweight and well-suited
+            for a game jam,
+            though it limited the game to run only on Windows devices. Since the system only listens for specific
+            phrases, we designed our
+            challenges around short, distinct words like “cheese,” “good dog,” or “stop” to ensure clear recognition.
+            While this limited the input
+            complexity, it made interactions fast, funny, and accessible.
+          </p>
+        </div>
+
         <!-- Extra Screenshots -->
         <div class="project-section">
           <div class="image-row">
-            <img src="../images/Project 4/hapotato_1.png" alt="Ha! Potato Screenshot 1">
-            <img src="../images/Project 4/hapotato_2.png" alt="Ha! Potato Screenshot 2">
+            <img src="../images/Project 4/hapotato_1.png"
+              alt="Microgame showing a player interacting with voice controls">
+            <img src="../images/Project 4/hapotato_2.png" alt="Ha! Potato gameplay moment with humorous visual">
           </div>
         </div>
-    
+
         <!-- Gameplay Video -->
         <div class="project-section">
           <div class="video-wrapper">
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/9-FGtBUwVyU" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/9-FGtBUwVyU" frameborder="0"
+              allowfullscreen title="Ha! Potato Gameplay Video"></iframe>
           </div>
         </div>
-        
+
         <!-- Play Link -->
         <div class="project-section">
           <h3>Play It</h3>
-          <p><a href="https://cutloaf.itch.io/hapotato-mgdc" target="_blank" rel="noopener noreferrer">🎮 Play Ha! Potato on Itch.io</a></p>
+          <p><a href="https://cutloaf.itch.io/hapotato-mgdc" target="_blank" rel="noopener noreferrer">🎮 Play Ha!
+              Potato on Itch.io</a></p>
         </div>
-        
+
         <!-- Back Button -->
         <div class="project-section">
-         <a href="../index.html" class="back-button">← Back</a>
+          <a href="../index.html" class="back-button">← Back</a>
         </div>
-        
+
       </section>
-    </main>    
+    </main>
 
     <footer class="site-footer">
       <p>&copy; 2025 Dorian Kavadlo</p>
     </footer>
   </div>
 </body>
+
 </html>
