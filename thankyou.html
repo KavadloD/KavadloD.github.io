@@ -2,34 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You – Dorian Kavadlo</title>
+  <meta name="description" content="Thanks for reaching out! Your message was received by Dorian Kavadlo.">
   <link rel="stylesheet" href="styles.css" />
-  <meta http-equiv="refresh" content="5;url=contact.html">
-  <style>
-    .thank-you-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      font-family: "Figtree", sans-serif;
-    }
-    .thank-you-wrapper h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .thank-you-wrapper p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="thank-you-wrapper">
-    <h1>Thanks for reaching out!</h1>
-    <p>Your message has been sent. Redirecting you back to the contact page...</p>
+  <div class="page-wrapper">
+    <header>
+      <h1><a href="index.html">Dorian Kavadlo</a></h1>
+      <p class="tagline">Developer with a passion for games, music, and clean design.</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="bio.html">Bio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <div class="thankyou-message">
+        <h2>Thanks for reaching out!</h2>
+        <p>I’ll get back to you as soon as I can.</p>
+        <p><a href="index.html">← Back to home</a></p>
+      </div>
+    </main>
   </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Dorian Kavadlo</p>
+  </footer>
 </body>
 </html>

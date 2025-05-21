@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Dorian Kavadlo</title>
+  <meta name="description"
+    content="Get in touch with Dorian Kavadlo for project inquiries, collaboration, or freelance opportunities.">
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,22 +58,23 @@
           </div>
 
           <h3>Send me a message</h3>
-          <form action="https://formsubmit.co/dkavadlo@gmail.com" method="POST" class="contact-form" autocomplete="off">
-            <!-- Honeypot field -->
-            <input type="text" name="_honey" style="display:none">
+          <form action="thankyou.html" method="POST" class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
 
-            <!-- Disable CAPTCHA -->
-            <input type="hidden" name="_captcha" value="false">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com"
+              pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" />
 
-            <!-- Redirect after submission -->
-            <input type="hidden" name="_next" value="https://kavadlod.github.io/thankyou.html">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required
+              placeholder="What would you like to say?"></textarea>
 
-            <input type="text" name="first-name" placeholder="First Name" required>
-            <input type="text" name="last-name" placeholder="Last Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="text" name="url_field" id="url_field" autocomplete="off" style="display: none;">
+
             <button type="submit">Send Message</button>
           </form>
+
         </section>
       </main>
     </div>
