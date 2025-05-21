@@ -61,34 +61,25 @@ a:focus-visible {
 
 .page-content {
   opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
-/* Directional entry starting states */
-.page-content.slide-left {
-  transform: translateX(30px);
-}
-
-.page-content.slide-right {
-  transform: translateX(-30px);
-}
-
-/* Entry trigger */
-.page-content.loaded {
+/* Neutral fade-in */
+.page-content.fade-in {
   opacity: 1;
-  transform: translateX(0);
 }
 
-/* Exit transitions */
+/* Exit slide transitions */
 .page-content.fade-out.slide-left {
   opacity: 0;
   transform: translateX(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .page-content.fade-out.slide-right {
   opacity: 0;
   transform: translateX(-30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 

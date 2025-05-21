@@ -193,47 +193,52 @@
     });
   </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const pageContent = document.querySelector(".page-content");
-      const entryDirection = sessionStorage.getItem("transitionDirection");
-      if (pageContent) {
-        if (entryDirection) pageContent.classList.add(entryDirection);
-        void pageContent.offsetWidth;
-        pageContent.classList.add("loaded");
-        sessionStorage.removeItem("transitionDirection");
-      }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const pageContent = document.querySelector(".page-content");
 
-      const navLinks = document.querySelectorAll("nav a");
-      const pageOrder = {
-        "/": 0,
-        "/index.html": 0,
-        "/music.html": 1,
-        "/bio.html": 2,
-        "/contact.html": 3
-      };
+    // Neutral fade-in
+    if (pageContent) {
+      pageContent.classList.remove("slide-left", "slide-right", "fade-out");
+      pageContent.classList.add("fade-in");
+    }
 
-      navLinks.forEach(link => {
-        link.addEventListener("click", e => {
-          const targetHref = link.getAttribute("href");
-          if (!targetHref || targetHref.startsWith("http")) return;
-          const currentPath = window.location.pathname.split("/").pop() || "index.html";
-          const currentIndex = pageOrder[`/${currentPath}`];
-          const targetIndex = pageOrder[`/${targetHref}`];
-          if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+    // Fade-out w/ direction on click
+    const navLinks = document.querySelectorAll("nav a");
+    const pageOrder = {
+      "/": 0,
+      "/index.html": 0,
+      "/music.html": 1,
+      "/bio.html": 2,
+      "/contact.html": 3
+    };
 
-          e.preventDefault();
-          const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
-          sessionStorage.setItem("transitionDirection", direction);
-          pageContent.classList.remove("loaded", "slide-left", "slide-right");
-          pageContent.classList.add("fade-out", direction);
-          setTimeout(() => {
-            window.location.href = targetHref;
-          }, 400);
-        });
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        const targetHref = link.getAttribute("href");
+        if (!targetHref || targetHref.startsWith("http")) return;
+
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        const currentIndex = pageOrder[`/${currentPath}`];
+        const targetIndex = pageOrder[`/${targetHref}`];
+
+        if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+
+        e.preventDefault();
+
+        const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+        pageContent.classList.remove("fade-in");
+        pageContent.classList.add("fade-out", direction);
+
+        setTimeout(() => {
+          window.location.href = targetHref;
+        }, 400);
       });
     });
-  </script>
+  });
+</script>
+
+
 </body>
 
 </html>

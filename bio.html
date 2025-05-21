@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.png" type="image/png" />
 </head>
 
 <body>
@@ -74,25 +75,14 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const pageContent = document.querySelector(".page-content");
-      const entryDirection = sessionStorage.getItem("transitionDirection");
 
+      // Neutral fade-in
       if (pageContent) {
-        // 1. Apply direction class if set
-        if (entryDirection) {
-          pageContent.classList.add(entryDirection);
-        }
-
-        // 2. Force reflow to allow transition
-        void pageContent.offsetWidth;
-
-        // 3. Trigger fade/slide-in
-        pageContent.classList.add("loaded");
-
-        // 4. Cleanup
-        sessionStorage.removeItem("transitionDirection");
+        pageContent.classList.remove("slide-left", "slide-right", "fade-out");
+        pageContent.classList.add("fade-in");
       }
 
-      // Navigation logic
+      // Fade-out w/ direction on click
       const navLinks = document.querySelectorAll("nav a");
       const pageOrder = {
         "/": 0,
@@ -116,9 +106,7 @@
           e.preventDefault();
 
           const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
-          sessionStorage.setItem("transitionDirection", direction);
-
-          pageContent.classList.remove("loaded", "slide-left", "slide-right");
+          pageContent.classList.remove("fade-in");
           pageContent.classList.add("fade-out", direction);
 
           setTimeout(() => {
