@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="page-wrapper">
     <header>
@@ -24,37 +26,87 @@
       </nav>
     </header>
 
-    <main>
-      <h3 class="page-heading">About Me</h3>
-      <section class="bio-wrapper">
+    <div class="page-content">
+      <main>
+        <h3 class="page-heading">About Me</h3>
+        <section class="bio-wrapper">
 
-        <article class="bio-entry profile-intro">
-          <div class="bio-intro-flex">
-            <img src="images/Bio/profile_pic.png" alt="Dorian Kavadlo headshot" class="bio-img profile-pic">
-            <p>Hi, I’m <strong>Dorian Kavadlo</strong> — a QA and software developer with a background in game development, programming, and IT support. I earned my BFA in Game Design from Maryville University, where I studied interactive design, level development, and Unity programming.
-            I am currently purusing my Matsers degree in Software Development, with an estimate graduation of Fall 2025.
-          </p>
-          </div>
-        </article>
+          <article class="bio-entry profile-intro">
+            <div class="bio-intro-flex">
+              <img src="images/Bio/profile_pic.png" alt="Dorian Kavadlo headshot" class="bio-img profile-pic">
+              <p>Hi, I’m <strong>Dorian Kavadlo</strong> — a QA and software developer with a background in game
+                development, programming, and IT support. I earned my BFA in Game Design from Maryville University,
+                where
+                I studied interactive design, level development, and Unity programming.
+                I am currently purusing my Matsers degree in Software Development, with an estimate graduation of Fall
+                2025.
+              </p>
+            </div>
+          </article>
 
-        <article class="bio-entry profile-intro">
-          <div class="bio-intro-flex">
-            <img src="images/Bio/mgdc_1.jpg" alt="Game Jam teamwork" class="bio-img-half">
-            <p>While at Maryville, I served as President of the Game Developers Club. I organized game jams, launch parties, and dev meetups — giving students a space to build and share games together. I led team-based projects, built prototypes, and helped others grow their creative skills.
-              <br><br>
-              I’m working toward a career in QA or software development. I enjoy debugging, problem-solving, and ensuring great
-              user experiences. Whether it’s a polished game mechanic or a clean UI, I love building things that look nice and feel good to use.
-          </p>
+          <article class="bio-entry profile-intro">
+            <div class="bio-intro-flex">
+              <img src="images/Bio/mgdc_1.jpg" alt="Game Jam teamwork" class="bio-img-half">
+              <p>While at Maryville, I served as President of the Game Developers Club. I organized game jams, launch
+                parties, and dev meetups — giving students a space to build and share games together. I led team-based
+                projects, built prototypes, and helped others grow their creative skills.
+                <br><br>
+                I’m working toward a career in QA or software development. I enjoy debugging, problem-solving, and
+                ensuring great
+                user experiences. Whether it’s a polished game mechanic or a clean UI, I love building things that look
+                nice and feel good to use.
+              </p>
 
-          </div>
-        </article>
+            </div>
+          </article>
 
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
 
     <footer class="site-footer">
       <p>&copy; 2025 Dorian Kavadlo</p>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll("nav a");
+      const pageContent = document.querySelector(".page-content");
+
+      const pageOrder = {
+        "/": 0,
+        "/index.html": 0,
+        "/music.html": 1,
+        "/bio.html": 2,
+        "/contact.html": 3
+      };
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          const targetHref = link.getAttribute("href");
+          if (!targetHref || targetHref.startsWith("http")) return;
+
+          const currentPath = window.location.pathname.split("/").pop() || "index.html";
+          const currentIndex = pageOrder[`/${currentPath}`];
+          const targetIndex = pageOrder[`/${targetHref}`];
+
+          if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+
+          e.preventDefault();
+
+          const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+          pageContent.classList.add("fade-out", direction);
+
+          setTimeout(() => {
+            window.location.href = targetHref;
+          }, 400);
+        });
+      });
+    });
+
+  </script>
+
 </body>
+
 </html>

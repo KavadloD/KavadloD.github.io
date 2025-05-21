@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="icon" href="../images/favicon.png" type="image/png" />
 </head>
+
 <body>
   <div class="page-wrapper">
     <header>
@@ -24,43 +26,85 @@
         </ul>
       </nav>
     </header>
-
-    <main>
-      <h3 class="page-heading">Video Games</h3>
-      <section class="project-grid">
-        <a href="projects/project1.html" class="project-card">
-          <img src="images/Thumbnails/Face the music portfolio.png" alt="Face The Music game screenshot">
-          <h3>Face The Music</h3>
-        </a>
-        <a href="projects/project3.html" class="project-card">
-          <img src="images/Thumbnails/Darkest Place Portfolio.png" alt="Darkest Place game screenshot">
-          <h3>Darkest Place</h3>
-        </a>
-        <a href="projects/project2.html" class="project-card">
-          <img src="images/Thumbnails/Rough Patch Portfolio.png" alt="Rough Patch game screenshot">
-          <h3>Rough Patch</h3>
-        </a>
-      </section>
-      <h3 class="page-heading">Game Jams</h3>
-      <section class="project-grid">
-        <a href="projects/project4.html" class="project-card">
-          <img src="images/Thumbnails/Ha potato portfolio.png" alt="Ha! Potato game screenshot">
-          <h3>Ha! Potato</h3>
-        </a>
-        <a href="projects/project5.html" class="project-card">
-          <img src="images/Thumbnails/Squash Portfolio.png" alt="Squash, the Bug">
-          <h3>Squash, the Bug</h3>
-        </a>
-        <a href="projects/project6.html" class="project-card">
-          <img src="images/Thumbnails/Saplink portfolio.png" alt="Saplink">
-          <h3>Saplink</h3>
-        </a>
-      </section>
-    </main>
+    
+    <div class="page-content">
+      <main>
+        <h3 class="page-heading">Video Games</h3>
+        <section class="project-grid">
+          <a href="projects/project1.html" class="project-card">
+            <img src="images/Thumbnails/Face the music portfolio.png" alt="Face The Music game screenshot">
+            <h3>Face The Music</h3>
+          </a>
+          <a href="projects/project3.html" class="project-card">
+            <img src="images/Thumbnails/Darkest Place Portfolio.png" alt="Darkest Place game screenshot">
+            <h3>Darkest Place</h3>
+          </a>
+          <a href="projects/project2.html" class="project-card">
+            <img src="images/Thumbnails/Rough Patch Portfolio.png" alt="Rough Patch game screenshot">
+            <h3>Rough Patch</h3>
+          </a>
+        </section>
+        <h3 class="page-heading">Game Jams</h3>
+        <section class="project-grid">
+          <a href="projects/project4.html" class="project-card">
+            <img src="images/Thumbnails/Ha potato portfolio.png" alt="Ha! Potato game screenshot">
+            <h3>Ha! Potato</h3>
+          </a>
+          <a href="projects/project5.html" class="project-card">
+            <img src="images/Thumbnails/Squash Portfolio.png" alt="Squash, the Bug">
+            <h3>Squash, the Bug</h3>
+          </a>
+          <a href="projects/project6.html" class="project-card">
+            <img src="images/Thumbnails/Saplink portfolio.png" alt="Saplink">
+            <h3>Saplink</h3>
+          </a>
+        </section>
+      </main>
+    </div>
   </div>
 
   <footer class="site-footer">
     <p>&copy; 2025 Dorian Kavadlo</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll("nav a");
+      const pageContent = document.querySelector(".page-content");
+
+      const pageOrder = {
+        "/": 0,
+        "/index.html": 0,
+        "/music.html": 1,
+        "/bio.html": 2,
+        "/contact.html": 3
+      };
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          const targetHref = link.getAttribute("href");
+          if (!targetHref || targetHref.startsWith("http")) return;
+
+          const currentPath = window.location.pathname.split("/").pop() || "index.html";
+          const currentIndex = pageOrder[`/${currentPath}`];
+          const targetIndex = pageOrder[`/${targetHref}`];
+
+          if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+
+          e.preventDefault();
+
+          const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+          pageContent.classList.add("fade-out", direction);
+
+          setTimeout(() => {
+            window.location.href = targetHref;
+          }, 400);
+        });
+      });
+    });
+
+  </script>
+
 </body>
+
 </html>

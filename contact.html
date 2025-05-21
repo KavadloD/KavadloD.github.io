@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Dorian Kavadlo</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="page-wrapper">
     <header>
@@ -24,6 +26,7 @@
       </nav>
     </header>
 
+    <div class="page-content">
     <main>
       <h3 class="page-heading">Contact Me</h3>
       <section class="contact-section">
@@ -71,10 +74,51 @@
         </form>
       </section>
     </main>
+    </div>
   </div>
 
   <footer class="site-footer">
     <p>&copy; 2025 Dorian Kavadlo</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll("nav a");
+      const pageContent = document.querySelector(".page-content");
+
+      const pageOrder = {
+        "/": 0,
+        "/index.html": 0,
+        "/music.html": 1,
+        "/bio.html": 2,
+        "/contact.html": 3
+      };
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          const targetHref = link.getAttribute("href");
+          if (!targetHref || targetHref.startsWith("http")) return;
+
+          const currentPath = window.location.pathname.split("/").pop() || "index.html";
+          const currentIndex = pageOrder[`/${currentPath}`];
+          const targetIndex = pageOrder[`/${targetHref}`];
+
+          if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+
+          e.preventDefault();
+
+          const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+          pageContent.classList.add("fade-out", direction);
+
+          setTimeout(() => {
+            window.location.href = targetHref;
+          }, 400);
+        });
+      });
+    });
+
+  </script>
+
 </body>
+
 </html>
