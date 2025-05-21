@@ -27,53 +27,53 @@
     </header>
 
     <div class="page-content">
-    <main>
-      <h3 class="page-heading">Contact Me</h3>
-      <section class="contact-section">
-        <p class="contact-intro">If you'd like to connect or collaborate, you can reach me here:</p>
+      <main>
+        <h3 class="page-heading">Contact Me</h3>
+        <section class="contact-section">
+          <p class="contact-intro">If you'd like to connect or collaborate, you can reach me here:</p>
 
-        <div class="contact-icons">
-          <a href="mailto:dkavadlo@gmail.com">
-            <img src="icons/mail.png" alt="Email" />
-            <span>Email</span>
-          </a>
-          <a href="https://x.com/DKavadlo" target="_blank" rel="noopener noreferrer">
-            <img src="icons/x.png" alt="X (Twitter)" />
-            <span>X</span>
-          </a>
-          <a href="https://www.linkedin.com/in/dorian-kavadlo/" target="_blank" rel="noopener noreferrer">
-            <img src="icons/linkedin.png" alt="LinkedIn" />
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://github.com/KavadloD" target="_blank" rel="noopener noreferrer">
-            <img src="icons/github.png" alt="GitHub" />
-            <span>GitHub</span>
-          </a>
-          <a href="https://cutloaf.itch.io/" target="_blank" rel="noopener noreferrer">
-            <img src="icons/itch.png" alt="Itch.io" />
-            <span>Itch.io</span>
-          </a>
-        </div>
+          <div class="contact-icons">
+            <a href="mailto:dkavadlo@gmail.com">
+              <img src="icons/mail.png" alt="Email" />
+              <span>Email</span>
+            </a>
+            <a href="https://x.com/DKavadlo" target="_blank" rel="noopener noreferrer">
+              <img src="icons/x.png" alt="X (Twitter)" />
+              <span>X</span>
+            </a>
+            <a href="https://www.linkedin.com/in/dorian-kavadlo/" target="_blank" rel="noopener noreferrer">
+              <img src="icons/linkedin.png" alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/KavadloD" target="_blank" rel="noopener noreferrer">
+              <img src="icons/github.png" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a href="https://cutloaf.itch.io/" target="_blank" rel="noopener noreferrer">
+              <img src="icons/itch.png" alt="Itch.io" />
+              <span>Itch.io</span>
+            </a>
+          </div>
 
-        <h3>Send me a message</h3>
-        <form action="https://formsubmit.co/dkavadlo@gmail.com" method="POST" class="contact-form" autocomplete="off">
-          <!-- Honeypot field -->
-          <input type="text" name="_honey" style="display:none">
+          <h3>Send me a message</h3>
+          <form action="https://formsubmit.co/dkavadlo@gmail.com" method="POST" class="contact-form" autocomplete="off">
+            <!-- Honeypot field -->
+            <input type="text" name="_honey" style="display:none">
 
-          <!-- Disable CAPTCHA -->
-          <input type="hidden" name="_captcha" value="false">
+            <!-- Disable CAPTCHA -->
+            <input type="hidden" name="_captcha" value="false">
 
-          <!-- Redirect after submission -->
-          <input type="hidden" name="_next" value="https://kavadlod.github.io/thankyou.html">
+            <!-- Redirect after submission -->
+            <input type="hidden" name="_next" value="https://kavadlod.github.io/thankyou.html">
 
-          <input type="text" name="first-name" placeholder="First Name" required>
-          <input type="text" name="last-name" placeholder="Last Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
-    </main>
+            <input type="text" name="first-name" placeholder="First Name" required>
+            <input type="text" name="last-name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </main>
     </div>
   </div>
 
@@ -81,43 +81,52 @@
     <p>&copy; 2025 Dorian Kavadlo</p>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll("nav a");
-      const pageContent = document.querySelector(".page-content");
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("nav a");
+    const pageContent = document.querySelector(".page-content");
 
-      const pageOrder = {
-        "/": 0,
-        "/index.html": 0,
-        "/music.html": 1,
-        "/bio.html": 2,
-        "/contact.html": 3
-      };
+    // Entry animation based on previous page
+    const entryDirection = sessionStorage.getItem("transitionDirection");
+    if (entryDirection && pageContent) {
+      pageContent.classList.add("fade-in", entryDirection);
+      sessionStorage.removeItem("transitionDirection");
+    }
 
-      navLinks.forEach(link => {
-        link.addEventListener("click", e => {
-          const targetHref = link.getAttribute("href");
-          if (!targetHref || targetHref.startsWith("http")) return;
+    // Page order logic
+    const pageOrder = {
+      "/": 0,
+      "/index.html": 0,
+      "/music.html": 1,
+      "/bio.html": 2,
+      "/contact.html": 3
+    };
 
-          const currentPath = window.location.pathname.split("/").pop() || "index.html";
-          const currentIndex = pageOrder[`/${currentPath}`];
-          const targetIndex = pageOrder[`/${targetHref}`];
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        const targetHref = link.getAttribute("href");
+        if (!targetHref || targetHref.startsWith("http")) return;
 
-          if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        const currentIndex = pageOrder[`/${currentPath}`];
+        const targetIndex = pageOrder[`/${targetHref}`];
 
-          e.preventDefault();
+        if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
 
-          const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
-          pageContent.classList.add("fade-out", direction);
+        e.preventDefault();
 
-          setTimeout(() => {
-            window.location.href = targetHref;
-          }, 400);
-        });
+        const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+        sessionStorage.setItem("transitionDirection", direction);
+        pageContent.classList.add("fade-out", direction);
+
+        setTimeout(() => {
+          window.location.href = targetHref;
+        }, 400);
       });
     });
+  });
+</script>
 
-  </script>
 
 </body>
 

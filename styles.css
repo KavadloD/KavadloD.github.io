@@ -60,23 +60,57 @@ a:focus-visible {
 }
 
 .page-content {
-  /* Animation properties */
-  transition: opacity 0.4s ease, transform 0.4s ease;
   opacity: 1;
   transform: translateX(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Slide left */
+/* Exit transitions */
 .page-content.fade-out.slide-left {
   opacity: 0;
   transform: translateX(30px);
 }
 
-/* Slide right */
 .page-content.fade-out.slide-right {
   opacity: 0;
   transform: translateX(-30px);
 }
+
+/* Entry transitions */
+.page-content.fade-in.slide-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInFromLeft 0.4s ease forwards;
+}
+
+.page-content.fade-in.slide-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInFromRight 0.4s ease forwards;
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 main {
   flex: 1;

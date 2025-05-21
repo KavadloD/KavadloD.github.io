@@ -181,6 +181,14 @@
       const navLinks = document.querySelectorAll("nav a");
       const pageContent = document.querySelector(".page-content");
 
+      // Entry animation based on previous page
+      const entryDirection = sessionStorage.getItem("transitionDirection");
+      if (entryDirection && pageContent) {
+        pageContent.classList.add("fade-in", entryDirection);
+        sessionStorage.removeItem("transitionDirection");
+      }
+
+      // Page order logic
       const pageOrder = {
         "/": 0,
         "/index.html": 0,
@@ -203,6 +211,7 @@
           e.preventDefault();
 
           const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+          sessionStorage.setItem("transitionDirection", direction);
           pageContent.classList.add("fade-out", direction);
 
           setTimeout(() => {
@@ -211,7 +220,6 @@
         });
       });
     });
-
   </script>
 
 </body>

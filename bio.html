@@ -69,43 +69,52 @@
     </footer>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll("nav a");
-      const pageContent = document.querySelector(".page-content");
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("nav a");
+    const pageContent = document.querySelector(".page-content");
 
-      const pageOrder = {
-        "/": 0,
-        "/index.html": 0,
-        "/music.html": 1,
-        "/bio.html": 2,
-        "/contact.html": 3
-      };
+    // Entry animation based on previous page
+    const entryDirection = sessionStorage.getItem("transitionDirection");
+    if (entryDirection && pageContent) {
+      pageContent.classList.add("fade-in", entryDirection);
+      sessionStorage.removeItem("transitionDirection");
+    }
 
-      navLinks.forEach(link => {
-        link.addEventListener("click", e => {
-          const targetHref = link.getAttribute("href");
-          if (!targetHref || targetHref.startsWith("http")) return;
+    // Page order logic
+    const pageOrder = {
+      "/": 0,
+      "/index.html": 0,
+      "/music.html": 1,
+      "/bio.html": 2,
+      "/contact.html": 3
+    };
 
-          const currentPath = window.location.pathname.split("/").pop() || "index.html";
-          const currentIndex = pageOrder[`/${currentPath}`];
-          const targetIndex = pageOrder[`/${targetHref}`];
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        const targetHref = link.getAttribute("href");
+        if (!targetHref || targetHref.startsWith("http")) return;
 
-          if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        const currentIndex = pageOrder[`/${currentPath}`];
+        const targetIndex = pageOrder[`/${targetHref}`];
 
-          e.preventDefault();
+        if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
 
-          const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
-          pageContent.classList.add("fade-out", direction);
+        e.preventDefault();
 
-          setTimeout(() => {
-            window.location.href = targetHref;
-          }, 400);
-        });
+        const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+        sessionStorage.setItem("transitionDirection", direction);
+        pageContent.classList.add("fade-out", direction);
+
+        setTimeout(() => {
+          window.location.href = targetHref;
+        }, 400);
       });
     });
+  });
+</script>
 
-  </script>
 
 </body>
 
