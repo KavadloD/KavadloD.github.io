@@ -81,52 +81,63 @@
     <p>&copy; 2025 Dorian Kavadlo</p>
   </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll("nav a");
-    const pageContent = document.querySelector(".page-content");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const pageContent = document.querySelector(".page-content");
+      const entryDirection = sessionStorage.getItem("transitionDirection");
 
-    // Entry animation based on previous page
-    const entryDirection = sessionStorage.getItem("transitionDirection");
-    if (entryDirection && pageContent) {
-      pageContent.classList.add("fade-in", entryDirection);
-      sessionStorage.removeItem("transitionDirection");
-    }
+      if (pageContent) {
+        // 1. Apply direction class if set
+        if (entryDirection) {
+          pageContent.classList.add(entryDirection);
+        }
 
-    // Page order logic
-    const pageOrder = {
-      "/": 0,
-      "/index.html": 0,
-      "/music.html": 1,
-      "/bio.html": 2,
-      "/contact.html": 3
-    };
+        // 2. Force reflow to allow transition
+        void pageContent.offsetWidth;
 
-    navLinks.forEach(link => {
-      link.addEventListener("click", e => {
-        const targetHref = link.getAttribute("href");
-        if (!targetHref || targetHref.startsWith("http")) return;
+        // 3. Trigger fade/slide-in
+        pageContent.classList.add("loaded");
 
-        const currentPath = window.location.pathname.split("/").pop() || "index.html";
-        const currentIndex = pageOrder[`/${currentPath}`];
-        const targetIndex = pageOrder[`/${targetHref}`];
+        // 4. Cleanup
+        sessionStorage.removeItem("transitionDirection");
+      }
 
-        if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+      // Navigation logic
+      const navLinks = document.querySelectorAll("nav a");
+      const pageOrder = {
+        "/": 0,
+        "/index.html": 0,
+        "/music.html": 1,
+        "/bio.html": 2,
+        "/contact.html": 3
+      };
 
-        e.preventDefault();
+      navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          const targetHref = link.getAttribute("href");
+          if (!targetHref || targetHref.startsWith("http")) return;
 
-        const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
-        sessionStorage.setItem("transitionDirection", direction);
-        pageContent.classList.add("fade-out", direction);
+          const currentPath = window.location.pathname.split("/").pop() || "index.html";
+          const currentIndex = pageOrder[`/${currentPath}`];
+          const targetIndex = pageOrder[`/${targetHref}`];
 
-        setTimeout(() => {
-          window.location.href = targetHref;
-        }, 400);
+          if (currentIndex === undefined || targetIndex === undefined || currentIndex === targetIndex) return;
+
+          e.preventDefault();
+
+          const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
+          sessionStorage.setItem("transitionDirection", direction);
+
+          pageContent.classList.remove("loaded", "slide-left", "slide-right");
+          pageContent.classList.add("fade-out", direction);
+
+          setTimeout(() => {
+            window.location.href = targetHref;
+          }, 400);
+        });
       });
     });
-  });
-</script>
-
+  </script>
 
 </body>
 

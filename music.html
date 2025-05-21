@@ -178,17 +178,27 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const navLinks = document.querySelectorAll("nav a");
       const pageContent = document.querySelector(".page-content");
-
-      // Entry animation based on previous page
       const entryDirection = sessionStorage.getItem("transitionDirection");
-      if (entryDirection && pageContent) {
-        pageContent.classList.add("fade-in", entryDirection);
+
+      if (pageContent) {
+        // 1. Apply direction class if set
+        if (entryDirection) {
+          pageContent.classList.add(entryDirection);
+        }
+
+        // 2. Force reflow to allow transition
+        void pageContent.offsetWidth;
+
+        // 3. Trigger fade/slide-in
+        pageContent.classList.add("loaded");
+
+        // 4. Cleanup
         sessionStorage.removeItem("transitionDirection");
       }
 
-      // Page order logic
+      // Navigation logic
+      const navLinks = document.querySelectorAll("nav a");
       const pageOrder = {
         "/": 0,
         "/index.html": 0,
@@ -212,6 +222,8 @@
 
           const direction = targetIndex > currentIndex ? "slide-right" : "slide-left";
           sessionStorage.setItem("transitionDirection", direction);
+
+          pageContent.classList.remove("loaded", "slide-left", "slide-right");
           pageContent.classList.add("fade-out", direction);
 
           setTimeout(() => {
@@ -221,7 +233,7 @@
       });
     });
   </script>
-
+  
 </body>
 
 </html>

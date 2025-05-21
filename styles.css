@@ -60,9 +60,24 @@ a:focus-visible {
 }
 
 .page-content {
-  opacity: 1;
+  opacity: 0;
   transform: translateX(0);
   transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Directional entry starting states */
+.page-content.slide-left {
+  transform: translateX(30px);
+}
+
+.page-content.slide-right {
+  transform: translateX(-30px);
+}
+
+/* Entry trigger */
+.page-content.loaded {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Exit transitions */
@@ -76,40 +91,6 @@ a:focus-visible {
   transform: translateX(-30px);
 }
 
-/* Entry transitions */
-.page-content.fade-in.slide-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: fadeInFromLeft 0.4s ease forwards;
-}
-
-.page-content.fade-in.slide-right {
-  opacity: 0;
-  transform: translateX(30px);
-  animation: fadeInFromRight 0.4s ease forwards;
-}
-
-@keyframes fadeInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 
 main {
@@ -577,6 +558,14 @@ main>h3 {
   box-shadow: 0 0 0 3px rgba(254, 102, 1, 0.25);
   transform: translateY(-4px);
 }
+
+.sc-embed {
+  width: 100%;
+  height: 120px;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
 
 /* ========================
    Bio Page
