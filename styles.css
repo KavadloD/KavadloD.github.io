@@ -164,8 +164,6 @@ main>h3 {
 .project-subheading {
   font-size: 0.9em;
   color: #777;
-  margin-top: -0.5em;
-  margin-bottom: 1.5em;
 }
 
 /* ========================
@@ -489,8 +487,8 @@ main>h3 {
 }
 
 .music-card {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1.5em;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
