@@ -8,7 +8,7 @@
   --color-highlight: #4a90e2;
   --color-link: #6c4caf;
   --color-bg: #ffffff;
-  --color-panel: #f9f9f9;
+  --color-panel: #ebebeb;
   --font-primary: 'Figtree', system-ui, sans-serif;
   --font-secondary: 'Source Sans 3', sans-serif;
 }
@@ -51,12 +51,16 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
   background-color: var(--color-bg);
-  background-image: url('../images/diamond-upholstery.png');
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), url('../images/diamond-upholstery.png');
   background-repeat: repeat;
-  background-size: auto;
+
+  background-size: 250px auto;
   background-blend-mode: multiply;
   z-index: 0;
+
 }
 
 .page-content {
@@ -485,7 +489,7 @@ main>h3 {
 }
 
 .music-card {
-  background-color: #f8f9fa;
+  background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1.5em;
